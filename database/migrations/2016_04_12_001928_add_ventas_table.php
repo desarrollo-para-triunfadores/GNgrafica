@@ -14,6 +14,13 @@ class AddVentasTable extends Migration
     {
         Schema::create('ventas', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('fecha_pedido');
+            $table->string('hora_pedido');
+            $table->date('fecha_venta');
+            $table->string('hora_venta');
+            $table->boolean('pagado');
+            $table->boolean('entregado');
+            $table->double('senado');
             $table->timestamps();
         });
     }

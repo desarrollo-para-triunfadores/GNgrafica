@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddArticuloVentaTable extends Migration
+class MigracionArticuloVenta extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,14 @@ class AddArticuloVentaTable extends Migration
     {
         Schema::create('articulo_venta', function (Blueprint $table) {
             $table->increments('id');
-
-            $table->integer('articulo_id')->unsigned();
-            $table->foreign('articulo_id')->references('id')->on('articulos')->onDelete('cascade'); 
+            $table->integer('cantidad');
             $table->double('importe');
             $table->double('precio_unitario');
-            $table->integer('cantidad');
+            $table->integer('articulo_id')->unsigned();
+            $table->integer('venta_id')->unsigned();
+
+            $table->foreign('articulo_id')->references('id')->on('articulos')->onDelete('cascade');
+            $table->foreign('venta_id')->references('id')->on('ventas')->onDelete('cascade');
 
             $table->timestamps();
         });
