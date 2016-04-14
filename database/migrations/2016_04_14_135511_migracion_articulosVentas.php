@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MigracionGnsoluciones extends Migration
+class MigracionArticulosVentas extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class MigracionGnsoluciones extends Migration
      */
     public function up()
     {
-        Schema::create('gn_soluciones', function (Blueprint $table) {
+        Schema::create('articulos_ventas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('cuit');
@@ -22,8 +22,7 @@ class MigracionGnsoluciones extends Migration
             $table->string('direccion');
 
             $table->foreign('localidad_id')->references('id')->on('localidades')->onDelete('cascade');
-            
-            $table->timestamps();            
+            $table->timestamps();
         });
     }
 
@@ -34,6 +33,6 @@ class MigracionGnsoluciones extends Migration
      */
     public function down()
     {
-        Schema::drop('gn_soluciones');
+        Schema::drop('articulos_ventas');
     }
 }
