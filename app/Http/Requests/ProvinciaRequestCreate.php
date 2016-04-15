@@ -13,7 +13,7 @@ class ProvinciaRequestCreate extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class ProvinciaRequestCreate extends Request
     public function rules()
     {
         return [
-            //
+            'nombre' => 'required|max:100|unique:provincias',
+            'pais_id' => 'required' 
         ];
     }
 }

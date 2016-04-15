@@ -3,9 +3,16 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Routing\Route;
 
 class PaisRequestEdit extends Request
 {
+
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -13,7 +20,7 @@ class PaisRequestEdit extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +31,7 @@ class PaisRequestEdit extends Request
     public function rules()
     {
         return [
-            //
+            'nombre' => 'required|max:100|unique:paises,nombre,'.$this->route->getParameter('paises')
         ];
     }
 }

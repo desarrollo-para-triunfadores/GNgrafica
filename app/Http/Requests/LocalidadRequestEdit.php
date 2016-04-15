@@ -3,9 +3,17 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Routing\Route;
 
 class LocalidadRequestEdit extends Request
 {
+
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
+
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -13,7 +21,7 @@ class LocalidadRequestEdit extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +32,7 @@ class LocalidadRequestEdit extends Request
     public function rules()
     {
         return [
-            //
-        ];
+            'nombre' => 'required|max:100|unique:localidades,nombre,'.$this->route->getParameter('localidades'),
+            'provincia_id' => 'required'        ];
     }
 }
