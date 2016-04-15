@@ -10,4 +10,8 @@ class Cliente extends Model
 
     protected $fillable = ['nombre', 'apellido', 'empresa', 'cuit', 'dni', 'telefono', 'email', 'localidad_id', 'direccion'];
 
+    public function ventas()
+    {
+        return $this->hasMany('App\Venta');
+    }
 }

@@ -14,14 +14,15 @@ class MigracionArticulosVentas extends Migration
     {
         Schema::create('articulos_ventas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('cuit');
-            $table->string('telefono');
-            $table->string('email');
-            $table->integer('localidad_id')->unsigned();            
-            $table->string('direccion');
+            $table->integer('cantidad');
+            $table->double('importe');
+            $table->double('precio_unitario');
+            $table->integer('articulo_id')->unsigned();
+            $table->integer('venta_id')->unsigned();
 
-            $table->foreign('localidad_id')->references('id')->on('localidades')->onDelete('cascade');
+            $table->foreign('articulo_id')->references('id')->on('articulos')->onDelete('cascade');
+            $table->foreign('venta_id')->references('id')->on('ventas')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
