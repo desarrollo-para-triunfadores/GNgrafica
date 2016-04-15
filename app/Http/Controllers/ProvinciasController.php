@@ -9,21 +9,15 @@ use App\Http\Controllers\Controller;
 use App\Provincia;
 use App\Pais;
 use Laracasts\Flash\Flash;
+use Carbon\Carbon;
 use App\Http\Requests\ProvinciaRequestCreate;
 use App\Http\Requests\ProvinciaRequestEdit;
-use Illuminate\Routing\Route;
 
 class ProvinciasController extends Controller
 {
     public function __construct()
     {
         Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
-        $this->beforeFilter('@find',['only'=>['edit', 'show', 'update','destroy']]); // Acá hacemos llamado a la función find para optimizar código y no repetir instrucciones en todos esos métodos.
-    }
-
-    public function find (Route $route)
-    {
-        $this->provincia = Provincia::find($route->getParameter('provincias'));  // provincias es el atributo que figura junto al nombre de la ruta en el archivo de rutas.    
     }
 
     /**
@@ -70,9 +64,10 @@ class ProvinciasController extends Controller
      */
     public function show($id)
     {
-        $paises = Pais::all()->lists('nombre','id');     
+        $paises = Pais::all()->lists('nombre','id'); 
+        $provincia = Provincia::find($id);    
         return view('admin.provincias.show')
-            ->with('provincia', $this->provincia)
+            ->with('provincia', $provincia)
             ->with('paises', $paises);
     }
 
@@ -95,9 +90,10 @@ class ProvinciasController extends Controller
      */
     public function update(ProvinciaRequestEdit $request, $id)
     {
-        $this->provincia->fill($request->all());
-        $this->provincia->save();
-        Flash::success("Se ha realizado la actualización del registro: ".$this->provincia->nombre.".");
+        $provincia = Provincia::find($id); 
+        $provincia->fill($request->all());
+        $provincia->save();
+        Flash::success("Se ha realizado la actualización del registro: ".$provincia->nombre.".");
         return redirect()->route('admin.provincias.show', $id);
     }
 
@@ -109,8 +105,9 @@ class ProvinciasController extends Controller
      */
     public function destroy($id)
     {
-        $this->provincia->delete();
-        Flash::error("Se ha realizado la eliminación del registro: ".$this->provincia->nombre.".");
+        $provincia = Provincia::find($id); 
+        $provincia->delete();
+        Flash::error("Se ha realizado la eliminación del registro: ".$provincia->nombre.".");
         return redirect()->route('admin.provincias.index');
     }
 }

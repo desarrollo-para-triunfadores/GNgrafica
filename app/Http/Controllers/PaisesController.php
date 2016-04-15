@@ -2,27 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Pais;
+use Carbon\Carbon;
 use Laracasts\Flash\Flash;
 use App\Http\Requests\PaisRequestCreate;
 use App\Http\Requests\PaisRequestEdit;
-use Illuminate\Routing\Route;
+use Illuminate\Http\Request;
+
 
 class PaisesController extends Controller
 {
     public function __construct()
     {
-        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
-        $this->beforeFilter('@find',['only'=>['edit', 'show', 'update','destroy']]); // Acá hacemos llamado a la función find para optimizar código y no repetir instrucciones en todos esos métodos.
-    }
-
-    public function find (Route $route)
-    {
-        $this->pais = Pais::find($route->getParameter('paises'));  // paises es el atributo que figura junto al nombre de la ruta en el archivo de rutas.    
+        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel       
     }
 
     /**
@@ -68,7 +63,8 @@ class PaisesController extends Controller
      */
     public function show($id)
     {       
-        return view('admin.paises.show')->with('pais',$this->pais);
+        $pais = Pais::find($id);
+        return view('admin.paises.show')->with('pais',$pais);
     }
 
     /**
@@ -89,10 +85,11 @@ class PaisesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(PaisRequestEdit $request, $id)
-    {       
-        $this->pais->fill($request->all());
-        $this->pais->save();
-        Flash::success("Se ha realizado la actualización del registro: ".$this->pais->nombre.".");
+    {      
+        $pais = Pais::find($id); 
+        $pais->fill($request->all());
+        $pais->save();
+        Flash::success("Se ha realizado la actualización del registro: ".$pais->nombre.".");
         return redirect()->route('admin.paises.show', $id);
     }
 
@@ -103,10 +100,10 @@ class PaisesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {       
-        $this->pais->delete();        
-        Flash::error("Se ha realizado la eliminación del registro: ".$this->pais->nombre.".");
+    {   
+        $pais = Pais::find($id);    
+        $pais->delete();        
+        Flash::error("Se ha realizado la eliminación del registro: ".$pais->nombre.".");
         return redirect()->route('admin.paises.index');
     }
 }
-
