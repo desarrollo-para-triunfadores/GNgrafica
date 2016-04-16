@@ -16,10 +16,6 @@
               Usuarios</div>
         </div>
         <div class="page-header pull-right">
-         <div class="page-toolbar">         
-                <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.usuarios.index') }}" title="Volver a los registros de usuarios"  class="btn btn-blue"> <span class="fa fa-arrow-circle-o-left" aria-hidden="true"></span> Volver</a>                         
-            </div>
-            
             <div class="page-toolbar">                      
                 <button data-placement="left" title="Registrar un nuevo Usuario" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
                     <span class="fa fa-user-plus"> Registrar Usuario</span>

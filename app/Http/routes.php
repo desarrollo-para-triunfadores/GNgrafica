@@ -12,12 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/auth/login');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
    Route::resource('usuarios','UsersController');
    Route::resource('paises','PaisesController');
    Route::resource('provincias','ProvinciasController');
    Route::resource('localidades','LocalidadesController');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+

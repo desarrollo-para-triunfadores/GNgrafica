@@ -11,7 +11,7 @@
                         <ul class="dropdown-menu dropdown-user pull-right">
                             <li><a href="{{ route('admin.usuarios.show', Auth::user()->id) }}"><i class="fa fa-user"></i>Mi Perfil</a></li>                          
                             <li class="divider"></li>
-                            <li><a href="{{ route('admin.auth.logout') }}"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
                         </ul>
                     </li>           
                 @else
@@ -19,7 +19,7 @@
                         <ul class="dropdown-menu dropdown-user pull-right">
                             <li><a href="{{ route('admin.usuarios.show', Auth::user()->id) }}"><i class="fa fa-user"></i>Mi Perfil</a></li>                          
                             <li class="divider"></li>
-                            <li><a href="{{ route('admin.auth.logout') }}"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
                         </ul>
                     </li>                                                           
                 @endif 
