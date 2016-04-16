@@ -22,6 +22,6 @@ class Venta extends Model
 
     public function movimientos()
 	{
-    	 return $this->belongsToMany('App\Movimiento');
+    	 return $this->hasMany('App\Movimiento');
 	} 
 }

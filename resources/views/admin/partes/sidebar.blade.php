@@ -18,47 +18,7 @@
                             </i>
                             <span class="menu-title">Lugares</span>
                         </a>
-                    </li>
-                    <li id="li3">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Rubros de Empresa" href="{{ route('admin.rubros.index') }}">
-                            <i class="fa fa-cutlery">
-                                <div class="icon-bg bg-orange"></div>
-                            </i>
-                            <span class="menu-title">Rubros de Empresa</span>
-                        </a>
-                    </li>
-                    <li id="li4">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Empresas/Proveedores" href="{{ route('admin.empresas.index') }}">
-                            <i class="fa fa-building-o">
-                                <div class="icon-bg bg-orange"></div>
-                            </i>
-                            <span class="menu-title">Empresas</span>
-                        </a>
-                    </li>
-                    <li id="li5">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Marcas" href="{{ route('admin.marcas.index') }}">
-                            <i class="fa fa-registered">
-                                <div class="icon-bg bg-orange"></div>
-                            </i>
-                            <span class="menu-title">Marcas</span>
-                        </a>
-                    </li>
-                    <li id="li6">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Tipos de Producto" href="{{ route('admin.tipoproducto.index') }}">
-                            <i class="fa fa-dropbox">
-                                <div class="icon-bg bg-orange"></div>
-                            </i>
-                            <span class="menu-title">Tipos de Producto</span>
-                        </a>
-                    </li>
-                    <li id="li7">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Productos" href="{{ route('admin.productos.index') }}">
-                           <i class="fa fa-beer">
-                                <div class="icon-bg bg-orange"></div>
-                            </i>
-                            <span class="menu-title">Productos</span>
-                        </a>
-                    </li>                 
+                    </li>                                 
                 </ul>
             </div>
         </nav>

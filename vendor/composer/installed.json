@@ -1351,86 +1351,6 @@
         ]
     },
     {
-        "name": "monolog/monolog",
-        "version": "1.18.2",
-        "version_normalized": "1.18.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Seldaek/monolog.git",
-            "reference": "064b38c16790249488e7a8b987acf1c9d7383c09"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/064b38c16790249488e7a8b987acf1c9d7383c09",
-            "reference": "064b38c16790249488e7a8b987acf1c9d7383c09",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0",
-            "psr/log": "~1.0"
-        },
-        "provide": {
-            "psr/log-implementation": "1.0.0"
-        },
-        "require-dev": {
-            "aws/aws-sdk-php": "^2.4.9",
-            "doctrine/couchdb": "~1.0@dev",
-            "graylog2/gelf-php": "~1.0",
-            "jakub-onderka/php-parallel-lint": "0.9",
-            "php-amqplib/php-amqplib": "~2.4",
-            "php-console/php-console": "^3.1.3",
-            "phpunit/phpunit": "~4.5",
-            "phpunit/phpunit-mock-objects": "2.3.0",
-            "raven/raven": "^0.13",
-            "ruflin/elastica": ">=0.90 <3.0",
-            "swiftmailer/swiftmailer": "~5.3"
-        },
-        "suggest": {
-            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
-            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
-            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-            "ext-mongo": "Allow sending log messages to a MongoDB server",
-            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
-            "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
-            "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
-            "php-console/php-console": "Allow sending log messages to Google Chrome",
-            "raven/raven": "Allow sending log messages to a Sentry server",
-            "rollbar/rollbar": "Allow sending log messages to Rollbar",
-            "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
-        },
-        "time": "2016-04-02 13:12:58",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Monolog\\": "src/Monolog"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jordi Boggiano",
-                "email": "j.boggiano@seld.be",
-                "homepage": "http://seld.be"
-            }
-        ],
-        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
-        "homepage": "http://github.com/Seldaek/monolog",
-        "keywords": [
-            "log",
-            "logging",
-            "psr-3"
-        ]
-    },
-    {
         "name": "league/flysystem",
         "version": "1.0.20",
         "version_normalized": "1.0.20.0",
@@ -3099,5 +3019,303 @@
         ],
         "description": "Symfony DomCrawler Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "monolog/monolog",
+        "version": "1.19.0",
+        "version_normalized": "1.19.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Seldaek/monolog.git",
+            "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+            "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "~1.0"
+        },
+        "provide": {
+            "psr/log-implementation": "1.0.0"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "^2.4.9",
+            "doctrine/couchdb": "~1.0@dev",
+            "graylog2/gelf-php": "~1.0",
+            "jakub-onderka/php-parallel-lint": "0.9",
+            "php-amqplib/php-amqplib": "~2.4",
+            "php-console/php-console": "^3.1.3",
+            "phpunit/phpunit": "~4.5",
+            "phpunit/phpunit-mock-objects": "2.3.0",
+            "raven/raven": "^0.13",
+            "ruflin/elastica": ">=0.90 <3.0",
+            "swiftmailer/swiftmailer": "~5.3"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+            "ext-mongo": "Allow sending log messages to a MongoDB server",
+            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+            "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+            "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+            "php-console/php-console": "Allow sending log messages to Google Chrome",
+            "raven/raven": "Allow sending log messages to a Sentry server",
+            "rollbar/rollbar": "Allow sending log messages to Rollbar",
+            "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+        },
+        "time": "2016-04-12 18:29:35",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Monolog\\": "src/Monolog"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            }
+        ],
+        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+        "homepage": "http://github.com/Seldaek/monolog",
+        "keywords": [
+            "log",
+            "logging",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "cocur/slugify",
+        "version": "v1.4.1",
+        "version_normalized": "1.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cocur/slugify.git",
+            "reference": "16cdd7e792657d524cde931ea666436623b23301"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cocur/slugify/zipball/16cdd7e792657d524cde931ea666436623b23301",
+            "reference": "16cdd7e792657d524cde931ea666436623b23301",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "codeclimate/php-test-reporter": "dev-master",
+            "laravel/framework": "~4.1",
+            "latte/latte": "~2.2",
+            "mockery/mockery": "~0.9",
+            "nette/di": "~2.2",
+            "phpunit/phpunit": "~4.6",
+            "plumphp/plum": "~0.1",
+            "sami/sami": "~1.3",
+            "satooshi/php-coveralls": "0.6.*",
+            "silex/silex": "~1.2",
+            "symfony/dependency-injection": "~2.4",
+            "symfony/http-kernel": "~2.4",
+            "twig/twig": "~1",
+            "zendframework/zend-modulemanager": "~2.2",
+            "zendframework/zend-servicemanager": "~2.2",
+            "zendframework/zend-view": "~2.2"
+        },
+        "time": "2016-02-11 09:53:46",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cocur\\Slugify\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ivo Bathke",
+                "email": "ivo.bathke@gmail.com"
+            },
+            {
+                "name": "Florian Eckerstorfer",
+                "email": "florian@eckerstorfer.co",
+                "homepage": "https://florian.ec"
+            }
+        ],
+        "description": "Converts a string into a slug.",
+        "keywords": [
+            "slug",
+            "slugify"
+        ]
+    },
+    {
+        "name": "cviebrock/eloquent-sluggable",
+        "version": "3.1.4",
+        "version_normalized": "3.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cviebrock/eloquent-sluggable.git",
+            "reference": "5d40a334ec02c32b9c7d33f9023b5da75eb27d7d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/5d40a334ec02c32b9c7d33f9023b5da75eb27d7d",
+            "reference": "5d40a334ec02c32b9c7d33f9023b5da75eb27d7d",
+            "shasum": ""
+        },
+        "require": {
+            "cocur/slugify": "^1.1",
+            "illuminate/config": "^5.0",
+            "illuminate/database": "^5.0",
+            "illuminate/support": "^5.0",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "orchestra/testbench": "^3.0",
+            "phpunit/phpunit": "^4.0"
+        },
+        "time": "2016-01-03 21:24:10",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cviebrock\\EloquentSluggable\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Colin Viebrock",
+                "email": "colin@viebrock.ca"
+            }
+        ],
+        "description": "Easy creation of slugs for your Eloquent models in Laravel",
+        "homepage": "https://github.com/cviebrock/eloquent-sluggable",
+        "keywords": [
+            "eloquent",
+            "laravel",
+            "slug"
+        ]
+    },
+    {
+        "name": "laravelcollective/html",
+        "version": "v5.2.4",
+        "version_normalized": "5.2.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LaravelCollective/html.git",
+            "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/LaravelCollective/html/zipball/3a312d39ffe37da0f57b602618b61fd07c1fcec5",
+            "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/http": "5.2.*",
+            "illuminate/routing": "5.2.*",
+            "illuminate/session": "5.2.*",
+            "illuminate/support": "5.2.*",
+            "illuminate/view": "5.2.*",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "illuminate/database": "5.2.*",
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2016-01-27 22:29:54",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Collective\\Html\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            },
+            {
+                "name": "Adam Engebretson",
+                "email": "adam@laravelcollective.com"
+            }
+        ],
+        "description": "HTML and Form Builders for the Laravel Framework",
+        "homepage": "http://laravelcollective.com"
+    },
+    {
+        "name": "laracasts/flash",
+        "version": "1.3.4",
+        "version_normalized": "1.3.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laracasts/flash.git",
+            "reference": "e0a048b911092e15920ce66f4b6a54b6befa30a3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laracasts/flash/zipball/e0a048b911092e15920ce66f4b6a54b6befa30a3",
+            "reference": "e0a048b911092e15920ce66f4b6a54b6befa30a3",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "dev-master"
+        },
+        "time": "2015-12-22 15:52:08",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Laracasts\\Flash": "src/"
+            },
+            "files": [
+                "src/Laracasts/Flash/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeffrey Way",
+                "email": "jeffrey@laracasts.com"
+            }
+        ],
+        "description": "Easy flash notifications"
     }
 ]

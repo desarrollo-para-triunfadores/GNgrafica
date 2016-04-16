@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin'], function () {
+   Route::resource('usuarios','UsersController');
    Route::resource('paises','PaisesController');
    Route::resource('provincias','ProvinciasController');
    Route::resource('localidades','LocalidadesController');
