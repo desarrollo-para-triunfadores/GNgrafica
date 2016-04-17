@@ -20,6 +20,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
    Route::resource('paises','PaisesController');
    Route::resource('provincias','ProvinciasController');
    Route::resource('localidades','LocalidadesController');
+   Route::resource('rubros','RubroController');
+   Route::resource('configuraciones','ConfiguracionesController');
+   Route::PUT('usuario/{usuarios}', [
+    'uses' => 'UsersController@actPass',
+    'as' => 'usuario.actpass'
+    ]);
 });
 
 Route::auth();

@@ -9,17 +9,19 @@
                  @if (Auth::user()->imagen === "sin imagen")
                     <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src=" {{ asset('imagenes/usuarios/sin-logo.png') }} " alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">  {{ Auth::user()->name }}  </span>&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-user pull-right">
-                            <li><a href="{{ route('admin.usuarios.show', Auth::user()->id) }}"><i class="fa fa-user"></i>Mi Perfil</a></li>                          
+                            <li><a href="{{ route('admin.usuarios.show', Auth::user()->id) }}"><i class="fa fa-user"></i>Mi perfil</a></li> 
+                            <li><a href="{{ route('admin.configuraciones.show', 1) }}"><i class="fa fa-cogs"></i>Configuración del sistema</a></li>                                                  
                             <li class="divider"></li>
-                            <li><a href="/logout"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i>Cerrar sesión</a></li>
                         </ul>
                     </li>           
                 @else
                     <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src=" {{ asset('imagenes/usuarios/' . Auth::user()->imagen) }} " alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">  {{ Auth::user()->name }}  </span>&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-user pull-right">
-                            <li><a href="{{ route('admin.usuarios.show', Auth::user()->id) }}"><i class="fa fa-user"></i>Mi Perfil</a></li>                          
+                            <li><a href="{{ route('admin.usuarios.show', Auth::user()->id) }}"><i class="fa fa-user"></i>Mi perfil</a></li>                          
+                            <li><a href="{{ route('admin.configuraciones.show', 1) }}"><i class="fa fa-cogs"></i>Configuración del sistema</a></li>                         
                             <li class="divider"></li>
-                            <li><a href="/logout"><i class="fa fa-sign-out"></i>Cerrar Sesión</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i>Cerrar sesión</a></li>
                         </ul>
                     </li>                                                           
                 @endif 

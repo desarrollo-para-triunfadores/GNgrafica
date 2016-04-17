@@ -15,13 +15,14 @@ class Localidad extends Model
     	return $this->belongsTo('App\Provincia');
     }
 
-    public function empresas() 
+    public function clientes() 
     {
-    	return $this->hasMany('App\Empresa');
+    	return $this->hasMany('App\Cliente');
     }
 
-    public function productos() 
+    public function configuracion() 
     {
-    	return $this->hasMany('App\Producto');
+        return $this->hasOne('App\Configuracion');
     }
+
 }

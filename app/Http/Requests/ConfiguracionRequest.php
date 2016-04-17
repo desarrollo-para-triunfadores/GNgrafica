@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class RubroRequestCreate extends Request
+class ConfiguracionRequestCreate extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,13 @@ class RubroRequestCreate extends Request
     public function rules()
     {
         return [
-            'nombre' => 'required|max:100|unique:rubros'            
+            'nombre' => 'required|max:100',
+            'telefono' => 'max:30',
+            'direccion' => 'required|max:50',
+            'localidad_id' => 'required',
+            'email' => 'email|max:100',
+            'cuit'  => 'active_url|max:100',
+            'imagen' => 'mimes:jpeg,png|max:3072' 
         ];
     }
 }

@@ -18,7 +18,15 @@
                             </i>
                             <span class="menu-title">Lugares</span>
                         </a>
-                    </li>                                 
+                    </li> 
+                    <li id="li3">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Rubros de Proveedores" href="{{ route('admin.rubros.index') }}">
+                            <i class="fa fa-cutlery">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Rubros de Proveedores</span>
+                        </a>
+                    </li>                                
                 </ul>
             </div>
         </nav>

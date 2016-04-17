@@ -3,9 +3,15 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Routing\Route;
 
 class UserRequestEdit extends Request
 {
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -13,7 +19,7 @@ class UserRequestEdit extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +30,9 @@ class UserRequestEdit extends Request
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:200',
+            'email' => 'required|email|max:100|unique:users,email,'.$this->route->getParameter('usuarios'),
+            'imagen' => 'image|max:3072' 
         ];
     }
 }

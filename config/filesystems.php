@@ -48,6 +48,21 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'usuarios' => [
+            'driver' => 'local',
+            'root'   => public_path('imagenes/usuarios'),
+        ],
+
+        'proveedores' => [
+            'driver' => 'local',
+            'root'   => public_path('imagenes/proveedores'),
+        ],
+
+        'configuraciones' => [
+            'driver' => 'local',
+            'root'   => public_path('imagenes/configuraciones'),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

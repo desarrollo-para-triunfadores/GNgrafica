@@ -53,7 +53,7 @@ class UsersController extends Controller
         if ($request->file('imagen'))
         {
             $file = $request->file('imagen');        
-            $nombreImagen = 'laAutentica_' . time() . '.' . $file->getClientOriginalExtension();
+            $nombreImagen = 'usuario_' . time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('usuarios')->put($nombreImagen, \File::get($file));
         }  
 
@@ -118,15 +118,15 @@ class UsersController extends Controller
         if ($request->file('imagen'))
         {
             $file = $request->file('imagen');        
-            $nombreImagen = 'laAutentica_' . time() . '.' . $file->getClientOriginalExtension();            
-            if (Storage::disk('usuarios')->exists($this->usuario->imagen))
+            $nombreImagen = 'usuario_' . time() . '.' . $file->getClientOriginalExtension();            
+            if (Storage::disk('usuarios')->exists($usuario->imagen))
              {
-                Storage::disk('usuarios')->delete($this->usuario->imagen);   // Borramos la imagen anterior.      
+                Storage::disk('usuarios')->delete($usuario->imagen);   // Borramos la imagen anterior.      
              }
             $usuario->fill($request->all());
             $usuario->imagen = $nombreImagen;  // Actualizamos el nombre de la nueva imagen.
             Storage::disk('usuarios')->put($nombreImagen, \File::get($file));  // Movemos la imagen nueva al directorio /imagenes/usuarios   
-            $this->usuario->save();
+            $usuario->save();
             Flash::success("Se ha realizado la actualización del usuario: ".$usuario->name.".");
             return redirect()->route('admin.usuarios.show', $id);            
         }  
@@ -149,7 +149,7 @@ class UsersController extends Controller
         {            
             Storage::disk('usuarios')->delete($usuario->imagen); // Borramos la imagen asociada.
         }
-        $this->usuario->delete();
+        $usuario->delete();
         Flash::error("Se ha realizado la eliminación del usuario: ".$usuario->name.".");        
         return redirect()->route('admin.usuarios.index');
     }

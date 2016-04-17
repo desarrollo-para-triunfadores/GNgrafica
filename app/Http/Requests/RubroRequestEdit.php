@@ -3,9 +3,15 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Routing\Route;
 
 class RubroRequestEdit extends Request
 {
+
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -13,7 +19,7 @@ class RubroRequestEdit extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +30,7 @@ class RubroRequestEdit extends Request
     public function rules()
     {
         return [
-            //
+            'nombre' => 'required|max:100|unique:rubros,nombre,'.$this->route->getParameter('rubros')
         ];
     }
 }
