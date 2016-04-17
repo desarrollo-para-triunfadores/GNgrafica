@@ -14,10 +14,13 @@ class AddProveedoresTable extends Migration
     {
         Schema::create('proveedores', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('imagen');
             $table->string('nombre');
             $table->string('cuit');
             $table->string('telefono');
             $table->string('email');
+            $table->integer('rubro_id')->unsigned();
+            $table->foreign('rubro_id')->references('id')->on('rubros')->onDelete('cascade');
 
             $table->timestamps();
         });
