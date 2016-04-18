@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MigracionConfiguraciones extends Migration
+class MigracionConfigs extends Migration
 {
     /**
      * Run the migrations.
@@ -12,18 +12,18 @@ class MigracionConfiguraciones extends Migration
      */
     public function up()
     {
-        Schema::create('configuraciones', function (Blueprint $table) {
+                        
+        Schema::create('configs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('imagen');
             $table->string('nombre');
             $table->string('cuit');
             $table->string('telefono');
             $table->string('email');
-            $table->integer('localidad_id')->unsigned();            
             $table->string('direccion');
+            $table->string('imagen');
+            $table->integer('localidad_id')->unsigned();            
 
             $table->foreign('localidad_id')->references('id')->on('localidades')->onDelete('cascade');
-
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class MigracionConfiguraciones extends Migration
      */
     public function down()
     {
-        Schema::drop('configuraciones');
+        Schema::drop('configs');
     }
 }

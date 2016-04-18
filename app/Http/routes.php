@@ -21,7 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
    Route::resource('provincias','ProvinciasController');
    Route::resource('localidades','LocalidadesController');
    Route::resource('rubros','RubroController');
-   Route::resource('configuraciones','ConfiguracionesController');
+   Route::resource('configuraciones','ConfigController');
    Route::PUT('usuario/{usuarios}', [
     'uses' => 'UsersController@actPass',
     'as' => 'usuario.actpass'

@@ -18,7 +18,7 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-pencil"></i>
-                    {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!}                                
+                    {!! Form::text('cuit', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!}                                
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-map-marker"></i>
-                     {!! Form::text('calle', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!} 
+                     {!! Form::text('direccion', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!} 
                 </div>                            
             </div>
         </div>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ConfiguracionRequestCreate extends Request
+class ConfiguracionRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,7 @@ class ConfiguracionRequestCreate extends Request
             'direccion' => 'required|max:50',
             'localidad_id' => 'required',
             'email' => 'email|max:100',
-            'cuit'  => 'active_url|max:100',
+            'cuit'  => 'required|max:12|min:12',
             'imagen' => 'mimes:jpeg,png|max:3072' 
         ];
     }

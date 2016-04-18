@@ -20,9 +20,9 @@ class Localidad extends Model
     	return $this->hasMany('App\Cliente');
     }
 
-    public function configuracion() 
+    public function config() 
     {
-        return $this->hasOne('App\Configuracion');
+        return $this->hasOne('App\Config');
     }
 
 }

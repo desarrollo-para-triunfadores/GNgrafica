@@ -42,7 +42,7 @@
                                                 <div class="col-md-4">
                                                     @if ($configuracion->imagen === "sin imagen")                                           
                                                         <div class="form-group">
-                                                            <div class="text-center mbl"><img src=" {{ asset('imagenes/configuraciones/sin-logo.png') }} " alt=""  style="width:250px;height:250px" class="img-thumbnail"/></div>
+                                                            <div class="text-center mbl"><img src=" {{ asset('imagenes/configuraciones/sin-logo.jpg') }} " alt=""  style="width:250px;height:250px" class="img-thumbnail"/></div>
                                                         </div>  
                                                     @else
                                                         <div class="form-group">
@@ -98,10 +98,4 @@
         </div>          
     </div>                    
 </div>
-@endsection
-
-@section('script') 
-    <script>
-        var listSidebar = "li2";
-    </script>
 @endsection

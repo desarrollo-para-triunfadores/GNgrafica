@@ -8,8 +8,12 @@
                     Actualizar registro de configuración</h4>
             </div>
             <div class="modal-body">   
-                @include('admin.partes.listaErrores')                                    
-{!! Form::model($configuracion, ['route' => ['admin.configuraciones.update', $configuracion], 'method' => 'PUT', 'id' =>'form-actualizar', 'class' => 'form-horizontal']) !!}
+                 @if ($errors->any())
+                     @include('admin.partes.listaErrores')
+                @else
+                    @include('admin.partes.msgLogoActualizar')
+                @endif                                    
+{!! Form::model($configuracion, ['route' => ['admin.configuraciones.update', $configuracion], 'method' => 'PUT', 'id' =>'form-actualizar', 'class' => 'form-horizontal', 'files' => true]) !!}
                          @include('admin.configuracion.contenidoForm')                                    
                     {!! Form::submit('Actualizar Registro', ['class' => 'btn btn-warning btn-block']) !!}  
                     <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
