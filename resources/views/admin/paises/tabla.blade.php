@@ -22,7 +22,7 @@
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.localidades.index') }}" title="Visualizar a los registros de localidades"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Localidades</a>                                   
                 </div>                                  
                 <button data-placement="bottom" title="Registrar un nuevo país" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <i class="fa fa-plus-circle"> Registrar País</i>
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar País
                 </button>                        
             </div>
         </div>

@@ -18,7 +18,7 @@
         <div class="page-header pull-right">
             <div class="page-toolbar">                      
                 <button data-placement="bottom" title="Registrar un nuevo rubro de empresa" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <i class="fa fa-plus-circle"> Registrar Rubro</i>
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Rubro
                 </button>                                  
             </div>
         </div>

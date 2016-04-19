@@ -24,7 +24,7 @@ class ProvinciaRequestCreate extends Request
     public function rules()
     {
         return [
-            'nombre' => 'required|max:100|unique:provincias',
+            'nombre' => 'required|max:50|unique:provincias',
             'pais_id' => 'required' 
         ];
     }

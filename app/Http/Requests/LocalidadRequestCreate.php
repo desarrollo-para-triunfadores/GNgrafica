@@ -24,7 +24,7 @@ class LocalidadRequestCreate extends Request
     public function rules()
     {
         return [
-            'nombre' => 'required|max:100|unique:localidades',
+            'nombre' => 'required|max:50|unique:localidades',
             'provincia_id' => 'required'    
         ];
     }

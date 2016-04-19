@@ -30,7 +30,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-envelope"></i>
-                                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!}                                
+                                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'maxlength' => '100', 'required']) !!}                                
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                             <div class="col-sm-9 controls">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                    {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!}                                                                   
+                                    {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'maxlength' => '50', 'required']) !!}                                                                   
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                             <div class="col-sm-9 controls">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        {!! Form::text('apellido', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!} 
+                                        {!! Form::text('apellido', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'maxlength' => '50', 'required']) !!} 
                                     </div>
                                 </div>
                             </div>

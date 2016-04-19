@@ -30,7 +30,7 @@ class RubroRequestEdit extends Request
     public function rules()
     {
         return [
-            'nombre' => 'required|max:100|unique:rubros,nombre,'.$this->route->getParameter('rubros')
+            'nombre' => 'required|max:50|unique:rubros,nombre,'.$this->route->getParameter('rubros')
         ];
     }
 }

@@ -31,7 +31,7 @@ class PaisRequestEdit extends Request
     public function rules()
     {
         return [
-            'nombre' => 'required|max:100|unique:paises,nombre,'.$this->route->getParameter('paises')
+            'nombre' => 'required|max:50|unique:paises,nombre,'.$this->route->getParameter('paises')
         ];
     }
 }

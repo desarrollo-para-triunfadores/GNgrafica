@@ -18,7 +18,7 @@
         <div class="page-header pull-right">
             <div class="page-toolbar">                      
                 <button data-placement="left" title="Registrar un nuevo Usuario" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <span class="fa fa-user-plus"> Registrar Usuario</span>
+                    <span class="fa fa-user-plus" aria-hidden="true"></span> Registrar Usuario
                 </button>                      
             </div>
         </div>

@@ -21,8 +21,8 @@
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.paises.index') }}" title="Visualizar los registros de países"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Países</a>             
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.provincias.index') }}" title="Visualizar a los registros de provincias"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Provincias</a> 
                 </div> 
-                <button data-placement="bottom" title="Registrar una nueva localidad" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <i class="fa fa-plus-circle"> Registrar Localidad</i>
+                <button data-placement="bottom" title="Registrar una nueva localidad" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">            
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Localidad
                 </button>                  
             </div>
         </div>
