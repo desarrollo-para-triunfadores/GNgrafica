@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Empresas Registradas
+    Proveedores Registrados
 @endsection
 
 @section('sidebar')
@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-@include('admin.empresas.create')
+@include('admin.proveedores.create')
     <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
         <div class="page-header pull-left">
             <div class="page-title">
@@ -38,9 +38,9 @@
                         </div>
                     </div>                                
                 </div>
-                @include('admin.empresas.cabeceraTabla')   
+                @include('admin.proveedores.cabeceraTabla')
                 <div class="tablaResultados">
-                    @include('admin.empresas.tablaLogos')
+                    @include('admin.proveedores.tablaLogos')
                 </div>                                                                       
                 @include('admin.empresas.tablaRegistros')
             </div>
@@ -50,7 +50,7 @@
 @section('script') 
     <script src="{{ asset('js/empresas.js') }}"></script>
     <script>
-        var route = "/admin/empresas";
+        var route = "/admin/proveedores";
         var listSidebar = "li4";
     </script>
 @endsection

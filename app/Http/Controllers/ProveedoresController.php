@@ -23,6 +23,13 @@ class ProveedoresController extends Controller
     }
 
     public function index()
+    {
+        $proveedores = Proveedor::all();
+        return view('admin.proveedores.tabla')->with('proveedores',$proveedores);
+    }
+    
+    /*
+    public function index() index viejo
     {     
         $proveedores = Proveedor::searchNombres($request->nombre)
         ->searchOrigen($request->idorigen)
@@ -30,10 +37,11 @@ class ProveedoresController extends Controller
         ->orderBy('id','ASC')
         ->paginate();
         if($request->ajax()){ 	//Si la solicitud fue realizada utilizando ajax se devuelven los registros únicamente a la tabla.
-            return response()->json(view('admin.proveedores.tablaLogos',compact('proveedores'))->render());
+            return response()->json(view('admin.proveedores.tabla',compact('proveedores'))->render());
         }
         return view('admin.proveedores.index')->with('proveedores',$proveedores);        
     }
+    */
 
 
     public function store(ProveedorRequestCreate $request)
