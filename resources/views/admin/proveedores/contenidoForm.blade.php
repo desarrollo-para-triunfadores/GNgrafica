@@ -15,12 +15,12 @@
                         <div class="form-group"><label class="col-sm-3 control-label">Rubro</label>
                             <div class="col-sm-9 controls">
                                 <div class="row">
-                                    <div class="col-xs-12">                            
-                                            {!! Form::select('rubro_id', $rubros, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}                                                                                                               
+                                    <div class="col-xs-12">
+                                        {!! Form::select('rubro_id', $rubros, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}
                                     </div>
                                 </div>
                             </div>
-                        </div>                         
+                        </div>
                         <div class="form-group"><label class="col-sm-3 control-label">Logo</label>
                             <div class="col-sm-9 controls">
                                 <div class="row">
@@ -42,7 +42,7 @@
                             <div class="col-sm-9 controls">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                    {!! Form::select('localidad_id', $localidades, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}                                                                   
+                                    {!! Form::select('localidad_id', $localidades, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}
                                     </div>
                                 </div>
                             </div>

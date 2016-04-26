@@ -4,12 +4,12 @@
             <div class="col-lg-4">                                         
                 <div class="form-group">
                     <label>Nombre</label>
-                    {!! Form::select('bus-nombre', array('-1' => 'Cualquier Empresa')+$empresaslista, -1, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'onchange' => 'enviar()', 'id' => 'bus-nombre']) !!}                                                                                                                                                                                                                                                                                                                                      
+                    {!! Form::select('bus-nombre', array('-1' => 'Cualquier Empresa')+$proveedoreslista, -1, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'onchange' => 'enviar()', 'id' => 'bus-nombre']) !!}
                 </div>
             </div>
             <div class="col-lg-4">                                         
                 <div class="form-group">
-                    <label>Empresa</label>
+                    <label>Empresa Proveedora</label>
                     {!! Form::select('bus-rubro', array('-1' => 'Cualquier Rubro')+$rubros, -1, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'onchange' => 'enviar()', 'id' => 'bus-rubros']) !!}                                                                                                                                                                            
                 </div>
             </div>  

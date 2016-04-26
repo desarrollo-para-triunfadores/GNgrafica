@@ -9,7 +9,8 @@
 @endsection
 
 @section('content')
-@include('admin.proveedores.create')
+    @include('admin.proveedores.create')
+
     <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
         <div class="page-header pull-left">
             <div class="page-title">
@@ -22,7 +23,7 @@
                     @include('admin.partes.botonesVistas')
                     @include('admin.partes.botonFiltrar')
                 </div>                      
-                <button data-placement="bottom" title="Registrar una nueva Empresa" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
+                <button data-placement="bottom" title="Registrar una nueva empresa proveedora" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
                     <i class="fa fa-plus-circle"> Registrar Empresa</i>
                 </button>                      
             </div>
@@ -40,15 +41,15 @@
                 </div>
                 @include('admin.proveedores.cabeceraTabla')
                 <div class="tablaResultados">
-                    @include('admin.proveedores.tablaLogos')
+                @include('admin.proveedores.tablaLogos')
                 </div>                                                                       
-                @include('admin.empresas.tablaRegistros')
+                @include('admin.proveedores.tablaRegistros')
             </div>
          </div>        
     </div>    
 @endsection
 @section('script') 
-    <script src="{{ asset('js/empresas.js') }}"></script>
+    <script src="{{ asset('proveedores.js') }}"></script>
     <script>
         var route = "/admin/proveedores";
         var listSidebar = "li4";

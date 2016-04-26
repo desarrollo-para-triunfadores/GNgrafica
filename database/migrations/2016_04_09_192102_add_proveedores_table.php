@@ -16,6 +16,8 @@ class AddProveedoresTable extends Migration
             $table->increments('id');
             $table->string('imagen');
             $table->string('nombre');
+            $table->integer('localidad_id')->unsigned();
+            $table->foreign('localidad_id')->references('id')->on('localidades')->onDelete('cascade');
             $table->string('cuit');
             $table->string('telefono');
             $table->string('email');

@@ -11,7 +11,7 @@
                     @include('admin.partes.msjRegAsociados')   
                 @else
                     <div class="modal-body">
-                        {!! Form::open(['route' => ['admin.empresas.destroy', $empresa], 'method' => 'DELETE']) !!}
+                        {!! Form::open(['route' => ['admin.proveedores.destroy', $empresa], 'method' => 'DELETE']) !!}
                         @include('admin.partes.msjConfirmar')
                         <hr>
                         <div class="pull-right">                                              

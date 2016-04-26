@@ -35,7 +35,7 @@ class ProveedoresRequestCreate extends Request
             'web'  => 'active_url|max:100',       
             'imagen' => 'mimes:jpeg,png|max:3072'
             
-            'horario_atencion' => 'horario_atencion'
+            //'horario_atencion' => 'horario_atencion'
         ];
     }
 }

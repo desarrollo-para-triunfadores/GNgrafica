@@ -26,7 +26,15 @@
                             </i>
                             <span class="menu-title">Rubros de Proveedores</span>
                         </a>
-                    </li>                                
+                    </li>
+                    <li id="li4">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Proveedores" href="{{ route('admin.proveedores.index') }}">
+                            <i class="fa fa-truck">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Proveedores</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>

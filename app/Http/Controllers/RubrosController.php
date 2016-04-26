@@ -12,7 +12,7 @@ use App\Http\Requests\RubroRequestEdit;
 use Carbon\Carbon;
 use Illuminate\Routing\Route;
 
-class RubroController extends Controller
+class RubrosController extends Controller
 {
     public function __construct()
     {
@@ -28,6 +28,11 @@ class RubroController extends Controller
     {
         $rubros = Rubro::all();
         return view('admin.rubros.tabla')->with('rubros',$rubros);
+    }
+
+    public function find (Route $route)
+    {
+        $this->rubro = Rubro::find($route->getParameter('rubros'));  // rubros es el atributo que figura junto al nombre de la ruta en el archivo de rutas.
     }
 
     /**

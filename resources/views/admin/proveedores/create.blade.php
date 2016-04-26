@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Registrar Empresa</h4>
+                    Registrar Empresa Proveedora</h4>
             </div>
             <div class="modal-body">               
                 @if ($errors->any())
@@ -21,8 +21,8 @@
                         </ul>                        
                     </div>
                 @endif
-{!! Form::open(['route' => 'admin.empresas.store', 'method' => 'POST', 'id' =>'form-crear', 'class' => 'form-horizontal', 'files' => true]) !!}
-                            @include('admin.empresas.contenidoForm')                    
+{!! Form::open(['route' => 'admin.proveedores.store', 'method' => 'POST', 'id' =>'form-crear', 'class' => 'form-horizontal', 'files' => true]) !!}
+                            @include('admin.proveedores.contenidoForm')
                         {!! Form::submit('Registrar Empresa', ['class' => 'btn btn-green btn-block']) !!}  
                         <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
                     Cerrar</button>                        
