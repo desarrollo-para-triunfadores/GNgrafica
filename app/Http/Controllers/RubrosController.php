@@ -90,7 +90,7 @@ class RubrosController extends Controller
      */
     public function update(RubroRequestEdit $request, $id)
     {
-    	$rubro = Rubro::find($id);
+        $rubro = Rubro::find($id);
         $rubro->fill($request->all());
         $rubro->save();
         Flash::success("Se ha realizado la actualización del registro: ".$rubro->nombre.".");

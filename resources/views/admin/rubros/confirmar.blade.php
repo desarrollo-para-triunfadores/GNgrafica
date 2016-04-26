@@ -1,4 +1,4 @@
-<div id="modal-confirmar" class="modal fade">
+    <div id="modal-confirmar" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,7 +7,7 @@
                 <h4 class="modal-title">
                     Eliminar Registro: {{ $rubro->nombre }}</h4>
             </div>
-            @if ($rubro->empresas->count()!=0)                                                                                                                                               
+            @if ($rubro->proveedores->count()!=0)
                 @include('admin.partes.msjRegAsociados')   
             @else
             <div class="modal-body">
