@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ProveedoresRequestEdit extends Request
+class ProveedorRequestEdit extends Request
 {
     public function __construct(Route $route)
     {

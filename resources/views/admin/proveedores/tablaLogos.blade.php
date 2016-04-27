@@ -34,7 +34,7 @@
                         </div>   
                         @endforeach                               
                     </div> 
-                    {!! $proceedor->render() !!}
+                    {!! $proveedores->render() !!}
                 </div>
             </div>
         </div>

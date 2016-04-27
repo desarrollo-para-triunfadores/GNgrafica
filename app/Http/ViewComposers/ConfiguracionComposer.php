@@ -13,8 +13,7 @@ class ConfiguracionComposer {
      */
     public function compose(View $view)
     {
-        $localidades = Localidad::orderBy('nombre','ASC')->lists('nombre','id');  
-
+        $localidades = Localidad::orderBy('nombre','ASC')->lists('nombre','id');
         $view->with('localidades', json_decode($localidades, true));
 
     }
