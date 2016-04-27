@@ -33,14 +33,13 @@ class ProveedoresRequestEdit extends Request
             'celular' => 'max:30',
             'telefono' => 'max:30',
             'calle' => 'required|max:50',
-            'altura' => 'required|max:10',
+            'altura' => 'required|max:5',
             'localidad_id' => 'required',
             'rubro_id' => 'required',
             'email' => 'email|max:100',
             'web'  => 'active_url|max:100',
-            'imagen' => 'mimes:jpeg,png|max:3072'
-
-            'horario_atencion' => 'horario_atencion'     
+            'imagen' => 'mimes:jpeg,png|max:3072',
+            'horario_atencion' => 'max:30',
         ];      
     }
 }
