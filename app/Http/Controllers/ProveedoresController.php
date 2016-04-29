@@ -53,7 +53,6 @@ class ProveedoresController extends Controller
         //Manipulación de Imágenes...
 
         $nombreImagen = 'sin imagen';                   //esto saque el 28/4 18:00 ***JUAMPY
-        $proveedor->imagen = $nombreImagen;
 
         if ($request->file('imagen'))
         {
@@ -61,6 +60,7 @@ class ProveedoresController extends Controller
             $nombreImagen = 'GN_' . time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('proveedores')->put($nombreImagen, \File::get($file));
         }
+        $proveedor->imagen = $nombreImagen;
         $proveedor->save();
         /*
         $imagen = new Logo_Proveedor();
