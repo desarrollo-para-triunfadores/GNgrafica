@@ -48,23 +48,26 @@ class ProveedoresController extends Controller
     public function store(ProveedorRequestCreate $request)
     {
         $proveedor = new Proveedor($request->all());
-        $proveedor->save();
+
 
         //Manipulación de Imágenes...
-        $nombreImagen = 'sin imagen';
+
+        $nombreImagen = 'sin imagen';                   //esto saque el 28/4 18:00 ***JUAMPY
+        $proveedor->imagen = $nombreImagen;
 
         if ($request->file('imagen'))
         {
             $file = $request->file('imagen');        
             $nombreImagen = 'GN_' . time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('proveedores')->put($nombreImagen, \File::get($file));
-        }        
-
+        }
+        $proveedor->save();
+        /*
         $imagen = new Logo_Proveedor();
         $imagen->nombre = $nombreImagen;
         $imagen->proveedor()->associate($proveedor);
         $imagen->save();
-
+        */
         Flash::success('El proveedor "'. $proveedor->nombre.'"" ha sido registrado de forma exitosa.');
         return redirect()->route('admin.proveedores.index');
     }
@@ -109,6 +112,7 @@ class ProveedoresController extends Controller
         Flash::success("Se ha realizado la actualización del registro: ".$proveedor->nombre.".");
         return redirect()->route('admin.proveedor.show', $id);
     }
+
 
     public function destroy($id)
     {

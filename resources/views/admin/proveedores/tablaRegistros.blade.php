@@ -21,9 +21,9 @@
                             <tr>                                                
                                 <td>{{ $proveedor->nombre }}</td>
                                 <td>{{ $proveedor->rubro->nombre }}</td>
-                                <td>{{ $proveedor->localidad->nombre }} ({{ $proveedor->localidad->provincia->pais->nombre }})</td>
+                                <td>{{ $proveedor->localidad->nombre }} ({{ $proveedor->localidad->nombre }})</td>
                                 <td class="text-center">
-                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrá acceder acciones como edición y eliminación del mismo" href="{{ route('admin.empresas.show', $empresa->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
+                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrá acceder acciones como edición y eliminación del mismo" href="{{ route('admin.proveedores.show', $proveedor->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
                                 </td>
                             </tr>                                                  
                         @endforeach

@@ -22,8 +22,20 @@ class Proveedor extends Model
         return $this->hasMany('App\Articulo');
     }
 
+    public function localidad()
+    {
+        return $this->belongsTo('App\Localidad');
+    }
 
-/***************** Metodo sacado de Empresa (LaAutentica) **************/
+
+    public function logo_proveedor()
+    {
+        return $this->hasOne('App\Proveedor');      //Atencion aca!** App/Logo_Proveedor
+    }
+
+
+
+    /***************** Metodos sacados de Empresa (LaAutentica) **************/
     public function scopeSearchNombres($query, $name)
     {
         if ($name == "-1")
