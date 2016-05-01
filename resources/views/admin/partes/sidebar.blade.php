@@ -26,6 +26,7 @@
                             </i>
                             <span class="menu-title">Rubros de Proveedores</span>
                         </a>
+<<<<<<< HEAD
                     </li>                      
                     <li id="li4">
                         <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Rubros de Proveedores" href="{{ route('admin.cajas.registrosCajas') }}">
@@ -43,6 +44,17 @@
                             <span class="menu-title">Caja</span>
                         </a>
                     </li>                                  
+=======
+                    </li>
+                    <li id="li4">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Proveedores" href="{{ route('admin.proveedores.index') }}">
+                            <i class="fa fa-truck">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Proveedores</span>
+                        </a>
+                    </li>
+>>>>>>> 1a8e96ab361b01d3def9e13d52c2440603bb9013
                 </ul>
             </div>
         </nav>

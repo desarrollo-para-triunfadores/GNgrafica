@@ -18,6 +18,9 @@ class ComposerServiceProvider extends ServiceProvider
         ([
             'App\Http\ViewComposers\ConfiguracionComposer' => 'admin.configuracion.contenidoForm',
             'App\Http\ViewComposers\InterfazComposer' => 'admin.partes.navTop',
+
+            'App\Http\ViewComposers\ProveedorComposer' => ['admin.proveedores.contenidoForm', 'admin.proveedores.cabeceraTabla'],
+
         ]);   
     }
 

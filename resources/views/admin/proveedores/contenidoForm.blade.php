@@ -11,16 +11,30 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                 
-                        <div class="form-group"><label class="col-sm-3 control-label">Rubro</label>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label">CUIT</label>
                             <div class="col-sm-9 controls">
                                 <div class="row">
-                                    <div class="col-xs-12">                            
-                                            {!! Form::select('rubro_id', $rubros, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}                                                                                                               
+                                    <div class="col-xs-12">
+                                        <div class="input-icon right">
+                                            <i class="fa fa-barcode"></i>
+                                            {!! Form::number('cuit', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                         
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label">Rubro</label>
+                            <div class="col-sm-9 controls">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        {!! Form::select('rubro_id', $rubros, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group"><label class="col-sm-3 control-label">Logo</label>
                             <div class="col-sm-9 controls">
                                 <div class="row">
@@ -42,7 +56,7 @@
                             <div class="col-sm-9 controls">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                    {!! Form::select('localidad_id', $localidades, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}                                                                   
+                                    {!! Form::select('localidad_id', $localidades, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +67,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-map-marker"></i>
-                                             {!! Form::text('calle', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!} 
+                                             {!! Form::text('calle', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}     //falta required a calle? (por la factura) Averiguar
                                         </div>                            
                                     </div>
                                 </div>
@@ -65,7 +79,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-map-marker"></i>
-                                            {!! Form::text('altura', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!}                                
+                                            {!! Form::text('altura', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -88,6 +102,20 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label">Horario de Atención</label>
+                            <div class="col-sm-9 controls">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="input-icon right">
+                                            <i class="fa fa-clock-o"></i>
+                                                {!! Form::text('horario_atencion', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group"><label class="col-sm-3 control-label">Celular</label>
                             <div class="col-sm-9 controls">
                                 <div class="row">
@@ -105,7 +133,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
-                                            <i class="fa fa-pencil"></i>
+                                            <i class="fa fa-at"></i>
                                             {!! Form::url('web', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}                                
                                         </div>
                                     </div>

@@ -7,6 +7,8 @@ use Storage;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Proveedor;
+use App\Rubro;
+
 use App\Logo_Proveedor;
 use Laracasts\Flash\Flash;
 use App\Http\Requests\ProveedorRequestCreate;
@@ -19,17 +21,16 @@ class ProveedoresController extends Controller
     public function __construct()
     {
     	Carbon::setlocale('es'); 	// Instancio en Español el manejador de fechas de Laravel
-        
     }
 
-    public function index()
+
+    public function find (Route $route)
     {
-        $proveedores = Proveedor::all();
-        return view('admin.proveedores.tabla')->with('proveedores',$proveedores);
+        $this->proveedor = Proveedor::find($route->getParameter('proveedores'));  // proveedores es el atributo que figura junto al nombre de la ruta en el archivo de rutas.
     }
     
-    /*
-    public function index() index viejo
+
+    public function index(Request $request) /*index similar a Empresa en LaAutentica*/
     {     
         $proveedores = Proveedor::searchNombres($request->nombre)
         ->searchOrigen($request->idorigen)
@@ -37,42 +38,53 @@ class ProveedoresController extends Controller
         ->orderBy('id','ASC')
         ->paginate();
         if($request->ajax()){ 	//Si la solicitud fue realizada utilizando ajax se devuelven los registros únicamente a la tabla.
-            return response()->json(view('admin.proveedores.tabla',compact('proveedores'))->render());
+            return response()->json(view('admin.proveedores.tablaLogos',compact('proveedores'))->render());
         }
         return view('admin.proveedores.index')->with('proveedores',$proveedores);        
     }
-    */
+
 
 
     public function store(ProveedorRequestCreate $request)
     {
         $proveedor = new Proveedor($request->all());
-        $proveedor->save();
+
 
         //Manipulación de Imágenes...
-        $nombreImagen = 'sin imagen';
+
+        $nombreImagen = 'sin imagen';                   //esto saque el 28/4 18:00 ***JUAMPY
 
         if ($request->file('imagen'))
         {
             $file = $request->file('imagen');        
             $nombreImagen = 'GN_' . time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('proveedores')->put($nombreImagen, \File::get($file));
-        }        
-
+        }
+        $proveedor->imagen = $nombreImagen;
+        $proveedor->save();
+        /*
         $imagen = new Logo_Proveedor();
         $imagen->nombre = $nombreImagen;
         $imagen->proveedor()->associate($proveedor);
         $imagen->save();
-
+        */
         Flash::success('El proveedor "'. $proveedor->nombre.'"" ha sido registrado de forma exitosa.');
         return redirect()->route('admin.proveedores.index');
+    }
+
+    public function create()
+    {
+
     }
 
 
     public function show($id)
     {
+        //return view('admin.proveedores.show')->with('proveedor', $this->proveedor);
+
     	$proveedor = Proveedor::find($id);
-        return view('admin.proveedores.show')->with('proveedor', $proovedor);
+        return view('admin.proveedores.show')->with('proveedor', $proveedor);
+
     }
 
 
@@ -101,6 +113,7 @@ class ProveedoresController extends Controller
         return redirect()->route('admin.proveedor.show', $id);
     }
 
+
     public function destroy($id)
     {
     	$proveedor = Proveedor::find($id);
@@ -108,7 +121,7 @@ class ProveedoresController extends Controller
         $logo_proveedor = $proveedor->logo_proveedor;
         if ($logo_proveedor->nombre != 'sin imagen')
         {            
-            Storage::disk('proveedores')->delete($logo_empresa->nombre); // Borramos la imagen asociada.
+            Storage::disk('proveedores')->delete($logo_proveedor->nombre); // Borramos la imagen asociada.
         } 
         $proveedor->delete();        
         Flash::error("Se ha realizado la eliminación del registro: ".$proveedor->nombre.".");        
