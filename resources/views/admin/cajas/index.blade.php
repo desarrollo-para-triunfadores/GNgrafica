@@ -52,20 +52,17 @@
                                                             <tr>
                                                                 <td><h4 class="box-heading">Usuario:</h4></td>
                                                                 <td><h4>{{ $caja->usuarioApertura->name }}</h4></td>
-                                                            </tr> 
-                                                                                                                                                                                                                                                               
+                                                            </tr>                                                                                                                                                                                                                                                                
                                                         </tbody>
                                                     </table> 
                                                 </div> 
                                                 <div class="col-md-6">                                                                                  
                                                     <table class="table table-striped table-hover">
-                                                        <tbody> 
-                                                 
+                                                        <tbody>                                                  
                                                             <tr>
                                                                 <td><h4 class="box-heading">Fecha y hora de apertura:</h4></td>
                                                                 <td><h4>{{ $caja->fecha_apertura }} - {{ $caja->hora_apertura }}</h4></td>
-                                                            </tr> 
-                                                                                                                                                                                                                                           
+                                                            </tr>                                                                                                                                                                                                                                            
                                                         </tbody>
                                                     </table> 
                                                 </div>                                                                                                                                                                         
@@ -80,17 +77,7 @@
                                                             </tr>                                                                                                                                                                                                              
                                                         </tbody>
                                                     </table> 
-                                                </div>  
-                                                <div class="col-md-3">                                                                                  
-                                                <table class="table table-striped table-hover">
-                                                    <tbody>                                                              
-                                                        <tr class="success">
-                                                            <td><h4 class="box-heading">Saldo actual:</h4></td>
-                                                            <td><h4>${{ $caja->totalMovimientos() }}</h4></td>
-                                                        </tr>                                                                                                                                                                                                              
-                                                    </tbody>
-                                                </table> 
-                                            </div>                                                                                                  
+                                                </div>                                                                                                   
                                             <div class="col-md-3">                                                                                  
                                                 <table class="table table-striped table-hover">
                                                     <tbody>                                             
@@ -110,9 +97,19 @@
                                                         </tr>                                                                                                                                                                                                              
                                                     </tbody>
                                                 </table> 
-                                            </div>                                                                                                                                                                                                                  
+                                            </div>
+                                            <div class="col-md-3">                                                                                  
+                                                <table class="table table-striped table-hover">
+                                                    <tbody>                                                              
+                                                        <tr class="success">
+                                                            <td><h4 class="box-heading">Saldo actual:</h4></td>
+                                                            <td><h4>${{ $caja->totalMovimientos() }}</h4></td>
+                                                        </tr>                                                                                                                                                                                                              
+                                                    </tbody>
+                                                </table> 
+                                            </div>                                                                                                                                                                                                                   
                                         </div>    
-                                        </div>                                                                                                                               
+                                    </div>                                                                                                                               
                                 </div>
                                 @include('admin.movimientos.tablaRegistros')  
                             </div>                            

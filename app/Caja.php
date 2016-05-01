@@ -8,7 +8,7 @@ class Caja extends Model
 {
 	protected $table =  "cajas";
 
-    protected $fillable = ['fecha_apertura', 'hora_apertura', 'saldo_inicial', 'fecha_cierre', 'hora_cierre', 'saldo_final', 'total_retirado', 'cerrado', 'userApertura_id', 'userCierre_id'];
+    protected $fillable = ['fecha_apertura', 'hora_apertura', 'saldo_inicial', 'fecha_cierre', 'hora_cierre', 'cerrado', 'userApertura_id', 'userCierre_id'];
     
     public function usuarioApertura()   
     {
@@ -29,7 +29,7 @@ class Caja extends Model
     {
         $total = 0;
         foreach ($this->movimientos as $movimiento) {
-            if ($movimiento->tipo === 'entrada'){
+            if ($movimiento->tipo == 'entrada'){
                 $total = $total + $movimiento->monto;               
             } 
         }
@@ -40,7 +40,7 @@ class Caja extends Model
     {
         $total = 0;
         foreach ($this->movimientos as $movimiento) {
-            if ($movimiento->tipo === 'salida'){
+            if ($movimiento->tipo == 'salida'){
                 $total = $total + $movimiento->monto;               
             } 
         }

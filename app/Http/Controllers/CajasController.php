@@ -104,10 +104,6 @@ class CajasController extends Controller
     {
         $caja = Caja::find($id); //recupero la caja
         $caja->fill($request->all()); // guardo la fecha y hora de cierre
-        $total_retirado = 0; // desde esta linea hasta la 105 establesco dos variables y en ellas guardo los valores necesarios, para ello recorro todos los movimientos asociados a esta caja.
-        $saldo_final = $caja->saldo_inicial;        
-        $caja->total_retirado = $caja->totalSalida();
-        $caja->saldo_final = $caja->totalMovimientos();
         $caja->cerrado = true;
         $caja->save(); // actualizamos el objeto caja con los valores recolectados y se persiste
         Flash::success("Se ha realizado el cierre del registro de caja.");

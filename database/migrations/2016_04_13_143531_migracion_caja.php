@@ -19,8 +19,6 @@ class MigracionCaja extends Migration
             $table->double('saldo_inicial');
             $table->string('fecha_cierre');
             $table->string('hora_cierre');
-            $table->double('saldo_final');
-            $table->double('total_retirado');
             $table->boolean('cerrado');
             $table->integer('userApertura_id')->unsigned()->nullable();
             $table->integer('userCierre_id')->unsigned()->nullable();

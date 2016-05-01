@@ -71,13 +71,13 @@
                                             <div class="col-md-2">                                                                                  
                                                 <table class="table table-striped table-hover">
                                                     <tbody>                                                              
-                                                        <tr class="success">
-                                                            <td><h4 class="box-heading">Saldo final:</h4></td>
-                                                            <td><h4>${{ $caja->saldo_final }}</h4></td>
+                                                        <tr class="warning">
+                                                            <td><h4 class="box-heading">Total ingresado:</h4></td>
+                                                            <td><h4>${{ $caja->totalEntrada() }}</h4></td>
                                                         </tr>                                                                                                                                                                                                              
                                                     </tbody>
                                                 </table> 
-                                            </div>                                                                                                                
+                                            </div>                                                                                                              
                                         </div> 
                                         <div class="row mtl">                                                    
                                             <div class="col-md-4">                                                                                  
@@ -99,27 +99,27 @@
                                                         </tr>                                                                                                                                                                                                                                  
                                                     </tbody>
                                                 </table> 
-                                            </div> 
+                                            </div>                                 
                                             <div class="col-md-2">                                                                                  
-                                                <table class="table table-striped table-hover">
-                                                    <tbody>                                                              
-                                                        <tr class="warning">
-                                                            <td><h4 class="box-heading">Total ingresado:</h4></td>
-                                                            <td><h4>${{ $caja->totalEntrada() }}</h4></td>
-                                                        </tr>                                                                                                                                                                                                              
-                                                    </tbody>
-                                                </table> 
-                                            </div>  
-                                             <div class="col-md-2">                                                                                  
                                                 <table class="table table-striped table-hover">
                                                     <tbody>                                                              
                                                         <tr class="danger">
                                                             <td><h4 class="box-heading">Total retirado:</h4></td>
-                                                            <td><h4>${{ $caja->total_retirado }}</h4></td>
+                                                            <td><h4>${{ $caja->totalSalida() }}</h4></td>
                                                         </tr>                                                                                                                                                                                                              
                                                     </tbody>
                                                 </table> 
-                                            </div>                                                                                                                                                          
+                                            </div> 
+                                            <div class="col-md-2">                                                                                  
+                                                <table class="table table-striped table-hover">
+                                                    <tbody>                                                              
+                                                        <tr class="success">
+                                                            <td><h4 class="box-heading">Saldo final:</h4></td>
+                                                            <td><h4>${{ $caja->totalMovimientos() }}</h4></td>
+                                                        </tr>                                                                                                                                                                                                              
+                                                    </tbody>
+                                                </table> 
+                                            </div>                                                                                                                                                                                                       
                                         </div>                                                                                                   
                                     </div>                                    
                                 </div>

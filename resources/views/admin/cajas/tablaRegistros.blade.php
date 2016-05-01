@@ -39,7 +39,8 @@
                                                 <th>Fecha y hora apertura</th>                                
                                                 <th>Saldo inicial</th>
                                                 <th>Usuario apertura</th>   
-                                                <th>Fecha y hora cierre</th>                             
+                                                <th>Fecha y hora cierre</th>     
+                                                <th>Total ingresado</th>                          
                                                 <th>Total retirado</th>  
                                                 <th>Saldo final</th>
                                                 <th>Usuario cierre</th>    
@@ -53,8 +54,9 @@
                                                 <td>${{ $caja->saldo_inicial }}</td> 
                                                 <td>{{ $caja->usuarioApertura->name }}</td> 
                                                 <td>{{ $caja->fecha_cierre }} - {{ $caja->hora_cierre }}</td> 
-                                                <td>${{ $caja->total_retirado }}</td> 
-                                                <td>${{ $caja->saldo_final }}</td>
+                                                <td>${{ $caja->totalEntrada() }}</td> 
+                                                <td>${{ $caja->totalSalida() }}</td> 
+                                                <td>${{ $caja->totalMovimientos() }}</td>
                                                 <td>{{ $caja->usuarioCierre->name }}</td>  
                                                 <td class="text-center">
                                                     <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrá acceder a todos los movimientos del mismo." href="{{ route('admin.cajas.show', $caja->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
