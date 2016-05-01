@@ -30,7 +30,7 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-pencil"></i>
-                    {!! Form::text('concepto', null, ['class' => 'form-control', 'require']) !!}                                
+                    {!! Form::text('concepto', null, ['class' => 'form-control', 'required', 'placeholder' => 'campo requerido (máximo 255 caracteres)' ]) !!}                                
                 </div>
             </div>
         </div>

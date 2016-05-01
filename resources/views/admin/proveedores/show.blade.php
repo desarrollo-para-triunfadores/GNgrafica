@@ -140,6 +140,6 @@
 @endsection
 @section('script') 
     <script>
-        var listSidebar = "li4";
+        var listSidebar = "li6";
     </script>
 @endsection

@@ -15,7 +15,6 @@
                                 <th>Tipo</th>   
                                 <th>Monto</th>                             
                                 <th>Usuario</th>    
-                                <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -25,10 +24,7 @@
                                 <td>{{ $movimiento->fecha }} - {{ $movimiento->hora }}</td>    
                                 <td>{{ $movimiento->tipo }}</td>                         
                                 <td>${{ $movimiento->monto }}</td>                                                                                                          
-                                <td>{{ $movimiento->user->name}}</td>  
-                                <td class="text-center">
-                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrá acceder a todos los movimientos del mismo." href="" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
-                                </td>
+                                <td>{{ $movimiento->user->name}}</td>                                 
                             </tr>                                                  
                         @endforeach
                         </tbody>

@@ -12,7 +12,7 @@
                         <span class="menu-title">Usuarios</span></a>
                     </li>
                     <li id="li2">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Paises, Provincias y Localidades" href="{{ route('admin.paises.index') }}">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los registros de paises, provincias y localidades" href="{{ route('admin.paises.index') }}">
                            <i class="fa fa-street-view">
                                 <div class="icon-bg bg-orange"></div>
                             </i>
@@ -20,41 +20,38 @@
                         </a>
                     </li> 
                     <li id="li3">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Rubros de Proveedores" href="{{ route('admin.rubros.index') }}">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los registros de rubros de proveedores" href="{{ route('admin.rubros.index') }}">
                             <i class="fa fa-cutlery">
                                 <div class="icon-bg bg-orange"></div>
                             </i>
                             <span class="menu-title">Rubros de Proveedores</span>
                         </a>
-<<<<<<< HEAD
-                    </li>                      
+                    </li>  
                     <li id="li4">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Rubros de Proveedores" href="{{ route('admin.cajas.registrosCajas') }}">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los registros de proveedores" href="{{ route('admin.proveedores.index') }}">
+                            <i class="fa fa-truck">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Proveedores</span>
+                        </a>
+                    </li>                    
+                    <li id="li5">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los registros de caja" href="{{ route('admin.cajas.registrosCajas') }}">
                             <i class="fa fa-folder-open">
                                 <div class="icon-bg bg-orange"></div>
                             </i>
                             <span class="menu-title">Registros de Cajas</span>
                         </a>
                     </li> 
-                    <li id="li5">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Rubros de Proveedores" href="{{ route('admin.cajas.index') }}">
+                    <li id="li6">
+                        <a data-toggle="tooltip" data-placement="right" title="Abrir Caja" href="{{ route('admin.cajas.index') }}">
                             <i class="fa fa-calculator">
                                 <div class="icon-bg bg-orange"></div>
                             </i>
                             <span class="menu-title">Caja</span>
                         </a>
                     </li>                                  
-=======
-                    </li>
-                    <li id="li4">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Proveedores" href="{{ route('admin.proveedores.index') }}">
-                            <i class="fa fa-truck">
-                                <div class="icon-bg bg-orange"></div>
-                            </i>
-                            <span class="menu-title">Proveedores</span>
-                        </a>
-                    </li>
->>>>>>> 1a8e96ab361b01d3def9e13d52c2440603bb9013
+                    </li>                   
                 </ul>
             </div>
         </nav>

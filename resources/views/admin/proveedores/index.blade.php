@@ -24,7 +24,7 @@
                     @include('admin.partes.botonFiltrar')
                 </div>                      
                 <button data-placement="bottom" title="Registrar una nueva empresa proveedora" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <i class="fa fa-plus-circle"> Registrar Empresa</i>
+                      <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Proveedor
                 </button>                      
             </div>
         </div>
@@ -52,6 +52,6 @@
     <script src="{{ asset('proveedores.js') }}"></script>
     <script>
         var route = "/admin/proveedores";
-        var listSidebar = "li4";
+        var listSidebar = "li6";
     </script>
 @endsection

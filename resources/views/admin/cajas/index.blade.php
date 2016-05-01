@@ -126,6 +126,6 @@
 
 @section('script') 
     <script>
-        var listSidebar = "li5";
+        var listSidebar = "li6";
     </script>
 @endsection

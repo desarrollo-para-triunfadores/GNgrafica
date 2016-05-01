@@ -39,7 +39,7 @@ function ocultarBusqueda()
 
 function abrirCaja()
 {
-   if (listSidebar === 'li5'){
+   if (listSidebar === 'li6'){
         $( "#botonmodal" ).click();
     } 
 }
