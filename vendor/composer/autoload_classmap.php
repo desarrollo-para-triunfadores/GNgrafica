@@ -94,6 +94,7 @@ return array(
     'MigracionMovimiento' => $baseDir . '/database/migrations/2016_04_13_143553_migracion_movimiento.php',
     'MigracionRoles' => $baseDir . '/database/migrations/2016_04_15_152832_migracion_roles.php',
     'MigracionRubros' => $baseDir . '/database/migrations/2016_04_08_165249_migracion_rubros.php',
+    'MigracionUserCaja' => $baseDir . '/database/migrations/2016_04_22_134905_migracion_user_caja.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
     'PHPUnit_Extensions_PhptTestCase' => $vendorDir . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',

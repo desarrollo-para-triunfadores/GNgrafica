@@ -26,7 +26,23 @@
                             </i>
                             <span class="menu-title">Rubros de Proveedores</span>
                         </a>
-                    </li>                                
+                    </li>                      
+                    <li id="li4">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Rubros de Proveedores" href="{{ route('admin.cajas.registrosCajas') }}">
+                            <i class="fa fa-folder-open">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Registros de Cajas</span>
+                        </a>
+                    </li> 
+                    <li id="li5">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los Registros de Rubros de Proveedores" href="{{ route('admin.cajas.index') }}">
+                            <i class="fa fa-calculator">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Caja</span>
+                        </a>
+                    </li>                                  
                 </ul>
             </div>
         </nav>

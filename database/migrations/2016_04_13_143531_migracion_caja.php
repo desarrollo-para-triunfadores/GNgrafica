@@ -14,13 +14,19 @@ class MigracionCaja extends Migration
     {
         Schema::create('cajas', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fecha_lote');
+            $table->string('fecha_apertura');
             $table->string('hora_apertura');
-            $table->string('hora_cierre');
             $table->double('saldo_inicial');
+            $table->string('fecha_cierre');
+            $table->string('hora_cierre');
             $table->double('saldo_final');
             $table->double('total_retirado');
             $table->boolean('cerrado');
+            $table->integer('userApertura_id')->unsigned()->nullable();
+            $table->integer('userCierre_id')->unsigned()->nullable();
+
+            $table->foreign('userApertura_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('userCierre_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

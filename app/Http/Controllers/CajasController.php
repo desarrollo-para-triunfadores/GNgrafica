@@ -3,11 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Caja;
+use App\Movimiento;
+use Laracasts\Flash\Flash;
+use App\Http\Requests\CajasRequestCreate;
+use App\Http\Requests\CajasRequestEdit;
+use Carbon\Carbon;
+use Illuminate\Routing\Route;
 
 class CajasController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +27,25 @@ class CajasController extends Controller
      */
     public function index()
     {
-        //
+        $caja = Caja::where('cerrado', false)->first(); //Aca se busca el primer registro de caja que este activo (supuestamente debería ser el único, igual se pone asi para que no siga buscando al pedo)
+        if ($caja===null){ //al llegar aca preguta si enncontro algo(si $caja no es un objeto vacio o null)
+             return view('admin.cajas.create'); //se devuelve la vista para abrir una caja
+        } else {
+
+            return view('admin.cajas.index')->with('caja',$caja); // se devuelve la caja en cuestion.
+        }
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function registrosCajas()
+    {
+        $cajas = Caja::where('cerrado', true)->get();
+        return view('admin.cajas.tablaRegistros')->with('cajas',$cajas);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +64,10 @@ class CajasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $caja = new Caja($request->all());
+        $caja->save();
+        Flash::success('Ha sido abierta una nueva caja.');
+        return redirect()->route('admin.cajas.index');
     }
 
     /**
@@ -47,7 +78,8 @@ class CajasController extends Controller
      */
     public function show($id)
     {
-        //
+        $caja = Caja::find($id);
+        return view('admin.cajas.show')->with('caja',$caja);
     }
 
     /**
@@ -70,7 +102,16 @@ class CajasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $caja = Caja::find($id); //recupero la caja
+        $caja->fill($request->all()); // guardo la fecha y hora de cierre
+        $total_retirado = 0; // desde esta linea hasta la 105 establesco dos variables y en ellas guardo los valores necesarios, para ello recorro todos los movimientos asociados a esta caja.
+        $saldo_final = $caja->saldo_inicial;        
+        $caja->total_retirado = $caja->totalSalida();
+        $caja->saldo_final = $caja->totalMovimientos();
+        $caja->cerrado = true;
+        $caja->save(); // actualizamos el objeto caja con los valores recolectados y se persiste
+        Flash::success("Se ha realizado el cierre del registro de caja.");
+        return redirect()->route('admin.cajas.show', $id);
     }
 
     /**
@@ -81,6 +122,9 @@ class CajasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $caja = Caja::find($id);  
+        $caja->delete();        
+        Flash::error("Se ha realizado la eliminación del registro de caja.");
+        return redirect()->route('admin.cajas.index');
     }
 }

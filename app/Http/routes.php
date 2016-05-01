@@ -22,10 +22,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
    Route::resource('localidades','LocalidadesController');
    Route::resource('rubros','RubroController');
    Route::resource('configuraciones','ConfigController');
-   Route::PUT('usuario/{usuarios}', [
-    'uses' => 'UsersController@actPass',
-    'as' => 'usuario.actpass'
-    ]);
+   Route::resource('cajas','CajasController');
+   Route::resource('movimientos','MovimientosController');
+   Route::get('tablaRegistros', ['uses' => 'CajasController@registrosCajas', 'as' => 'admin.cajas.registrosCajas']);
+   Route::PUT('usuario/{usuarios}', ['uses' => 'UsersController@actPass', 'as' => 'usuario.actpass']);
 });
 
 Route::auth();

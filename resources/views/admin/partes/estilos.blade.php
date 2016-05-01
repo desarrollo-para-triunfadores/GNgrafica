@@ -17,6 +17,9 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('plantillas/KAdmin-Dark/styles/jquery.news-ticker.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('plantillas/bootstrap-select/css/bootstrap-select.min.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('plantillas/bootstrap-select/css/bootstrap-select.css') }}">
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('plantillas/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
+    
     <link href="{{ asset('plantillas/parsley/src/parsley.css') }}" rel='stylesheet' type='text/css'>
     <link href="{{ asset('plantillas/DataTables/media/css/jquery.dataTables.css') }}" rel='stylesheet' type='text/css'>
     <link href="{{ asset('plantillas/DataTables/extensions/Responsive/css/dataTables.responsive.css') }}" rel='stylesheet' type='text/css'>

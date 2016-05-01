@@ -49,7 +49,10 @@
 <script src="{{ asset('plantillas/bootstrap-select/js/bootstrap-select.js') }}"></script>
 <script src="{{ asset('plantillas/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
 
+<script src="{{ asset('plantillas/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>
 
+<script src="{{ asset('plantillas/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+<script src="{{ asset('plantillas/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 
 <script src="{{ asset('plantillas/parsley/dist/i18n/es.js') }}"></script>
 <script src="{{ asset('plantillas/parsley/dist/parsley.js') }}"></script>

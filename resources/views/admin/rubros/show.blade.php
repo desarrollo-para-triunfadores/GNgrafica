@@ -58,8 +58,8 @@
                                                                 <td><h4>{{ $rubro->created_at->diffForHumans() }}</h4></td>
                                                             </tr> 
                                                             <tr>
-                                                                <td><h4 class="box-heading">Cantidad de empresas asociadas:</h4></td>
-                                                                <td><h4>{{ $rubro->empresas->count() }}</h4></td>
+                                                                <td><h4 class="box-heading">Cantidad de proveedores asociados:</h4></td>
+                                                                <td><h4>{{ $rubro->proveedores->count() }}</h4></td>
                                                             </tr>                                     
                                                         </tbody>
                                                     </table> 

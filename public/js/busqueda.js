@@ -1,6 +1,7 @@
 $(document).ready(function () {  
     constructorTabla();
-    constructorSelect();
+    constructorSelect();    
+    abrirCaja();
     $("#"+listSidebar).addClass("active");
     $('#form-crear').parsley();
     $('#form-actualizar').parsley();
@@ -36,3 +37,9 @@ function ocultarBusqueda()
     }
 }
 
+function abrirCaja()
+{
+   if (listSidebar === 'li5'){
+        $( "#botonmodal" ).click();
+    } 
+}
