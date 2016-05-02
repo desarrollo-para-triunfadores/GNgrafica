@@ -62,7 +62,11 @@
                                                             <tr>
                                                                 <td><h4 class="box-heading">Razón social:</h4></td>
                                                                 <td><h4>{{ $proveedor->nombre }}</h4></td>
-                                                            </tr>                                                        
+                                                            </tr>
+                                                            <tr>
+                                                                <td><h4 class="box-heading">CUIT:</h4></td>
+                                                                <td><h4>{{ $proveedor->cuit}}</h4></td>
+                                                            </tr>
                                                             <tr>
                                                                 <td><h4 class="box-heading">Rubro:</h4></td>
                                                                 <td><h4>{{ $proveedor->rubro->nombre }}</h4></td>
@@ -70,6 +74,32 @@
                                                             <tr>
                                                                 <td><h4 class="box-heading">Localidad:</h4></td>
                                                                 <td><h4>{{ $proveedor->localidad->nombre }} </h4></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><h4 class="box-heading">Calle:</h4></td>
+                                                                @if ($proveedor->calle)
+                                                                    <td><h4>{{ $proveedor->calle }}</h4></td>
+                                                                @else
+                                                                    <td><h4>No se registró</h4></td>
+                                                                @endif
+
+                                                                <td><h4 class="box-heading">Altura:</h4></td>
+                                                                @if ($proveedor->calle)
+                                                                    <td><h4>{{ $proveedor->altura }}</h4></td>
+                                                                @else
+                                                                    <td><h4>No se registró</h4></td>
+                                                                @endif
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><h4 class="box-heading">Horario de Atención:</h4></td>
+                                                                @if ($proveedor->horario_atencion)
+                                                                    <td><h4>{{ $proveedor->horario_atencion }}</h4></td>
+                                                                @else
+                                                                    <td><h4>No se registró</h4></td>
+                                                                @endif
+
                                                             </tr>
                                                             <tr>
                                                                 <td><h4 class="box-heading">Dirección:</h4></td>

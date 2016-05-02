@@ -13,23 +13,11 @@
         </div>
     </div>
 </div>
-<div class="form-group"><label class="col-sm-3 control-label">Empresa Perteneciente</label>
+<div class="form-group"><label class="col-sm-3 control-label">Proveedor del articulo</label>
     <div class="col-sm-9 controls">
         <div class="row">
             <div class="col-xs-12">
-            {!! Form::select('empresa_id', $empresas, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}                                                                   
-            </div>
-        </div>
-    </div>
-</div>
-<div class="form-group"><label class="col-sm-3 control-label">Logo</label>
-    <div class="col-sm-9 controls">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="input-icon right">
-                        <i class="fa fa-upload"></i>
-                    {!! Form::file('imagen', ['class' => 'form-control']) !!}                                                                   
-                </div>
+            {!! Form::select('proveedor_id', $proveedores, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}
             </div>
         </div>
     </div>

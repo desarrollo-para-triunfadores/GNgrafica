@@ -7,7 +7,7 @@
                 <h4 class="modal-title">
                     Eliminar Empresa Proveedora: {{ $proveedor->nombre }}</h4>
             </div>
-                @if ($proveedor->count()!=0)
+                @if ($proveedor->articulos->count()!=0)
                     @include('admin.partes.msjRegAsociados')   
                 @else
                     <div class="modal-body">
