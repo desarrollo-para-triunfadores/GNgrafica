@@ -19,11 +19,26 @@ class Articulo extends Model implements SluggableInterface
 
 	protected $table =  "articulos";
 
-    protected $fillable = ['nombre', 'proveedor_id', 'stockMin', 'descripcion'];
+    protected $fillable = ['nombre', 'proveedor_id', 'tipo_id', 'material_id','color','alto','ancho','talle_id', 'stockMin', 'descripcion'];
 
     public function proveedor()   
     {
         return $this->belongsTo('App\Proveedor');
+    }
+
+    public function tipo()
+    {
+        return $this->belongsTo('App\Tipo');
+    }
+
+    public function material()
+    {
+        return $this->belongsTo('App\Material');
+    }
+
+    public function talle()
+    {
+        return $this->belongsTo('App\Talle');
     }
 
     public function articulos_venta()
@@ -32,7 +47,7 @@ class Articulo extends Model implements SluggableInterface
     }
 
 
-
+/******************************************************************************************************/
     public function scopeSearchNombres($query, $nombre)
     {
         if ($nombre == "-1")
@@ -41,7 +56,6 @@ class Articulo extends Model implements SluggableInterface
         } else {
             return $query->where('nombre', 'LIKE', $nombre);
         }
-
     }
 
     public function scopeSearchEstado($query, $estado)
@@ -67,6 +81,26 @@ class Articulo extends Model implements SluggableInterface
     public function scopeSearchActivos($query)
     {
         return $query->where('estado', 'LIKE', 1);
+    }
+
+    public function scopeSearchMaterial($query, $idmaterial)
+    {
+        if ($idmaterial == "-1")
+        {
+            return $query;
+        } else {
+            return $query->where('material_id', 'LIKE', $idmaterial);
+        }
+    }
+
+    public function scopeSearchTalle($query, $idtalle)
+    {
+        if ($idtalle == "-1")
+        {
+            return $query;
+        } else {
+            return $query->where('talle_id', 'LIKE', $idtalle);
+        }
     }
    
 }

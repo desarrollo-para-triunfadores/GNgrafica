@@ -37,7 +37,7 @@
                     </li>                    
                     <li id="li5">
                         <a data-toggle="tooltip" data-placement="right" title="Visualizar los registros de caja" href="{{ route('admin.cajas.registrosCajas') }}">
-                            <i class="fa fa-folder-open">
+                            <i class="fa fa-money">
                                 <div class="icon-bg bg-orange"></div>
                             </i>
                             <span class="menu-title">Registros de Cajas</span>
@@ -50,8 +50,28 @@
                             </i>
                             <span class="menu-title">Caja</span>
                         </a>
-                    </li>                                  
-                    </li>                   
+                    </li>
+
+
+                    <li id="li7">
+                        <a data-toggle="tooltip" data-placement="right" title="Editar parametros de la gráfica" href="{{ route('admin.materiales.index') }}">
+                            <i class="fa fa-dropbox">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Parametros Generales</span>
+                        </a>
+                    </li>
+
+                    <li id="li8">
+                        <a data-toggle="tooltip" data-placement="right" title="Editar propiedades de los articulos" href="{{ route('admin.articulos.index') }}">
+                            <i class="fa fa-tags">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Articulos</span>
+                        </a>
+                    </li>
+
+
                 </ul>
             </div>
         </nav>

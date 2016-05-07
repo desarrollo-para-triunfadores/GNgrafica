@@ -1,35 +1,33 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Países Registrados
+    Materiales Registrados para los articulos
 @endsection
 
 @section('sidebar')
-     @include('admin.partes.sidebar')
+    @include('admin.partes.sidebar')
 @endsection
 
 @section('content')
-@include('admin.paises.create')
+    @include('admin.parametros.materiales.create')
     <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
         <div class="page-header pull-left">
             <div class="page-title">
-              Países</div>
+                Materiales</div>
         </div>
         <div class="page-header pull-right">
             <div class="page-toolbar">
                 <div class="btn-group" role="group" aria-label="...">
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.provincias.index') }}" title="Visualizar los registros de provincias"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Provincias</a> 
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.localidades.index') }}" title="Visualizar a los registros de localidades"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Localidades</a>                                   
-                </div>                                  
-                <button data-placement="bottom" title="Registrar un nuevo país" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar País
-                </button>                        
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.talles.index') }}" title="Visualizar los talles para indumentaria"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Talles</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.tipoArticulos.index') }}" title="Visualizar tipos de articulos"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Tipos</a>
+                </div>
+                <button data-placement="bottom" title="Registrar un nuevo material" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Material
+                </button>
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
-
-
     <div class="page-content">
         <div id="tab-general">
             <div class="row mbl">
@@ -43,23 +41,25 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-yellow">
-                                <div class="panel-heading">Países Registrados</div>
+                                <div class="panel-heading">Materiales Registrados</div>
                                 <div class="panel-body">
                                     @include('admin.partes.msjError')
                                     @include('flash::message')
                                     <table class="dataTable display table table-hover table-striped" >
                                         <thead>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th class="text-center">Acciones</th>
-                                            </tr>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Descripcion</th>
+                                            <th class="text-center">Acciones</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($paises as $pais)
+                                        @foreach($materiales as $material)
                                             <tr>
-                                                <td>  {{ $pais->nombre }}</td>
+                                                <td>  {{ $material->nombre }}</td>
+                                                <td>{{ $material->descripcion }}</td>
                                                 <td class="text-center">
-                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrá acceder acciones como edición y eliminación del mismo" href="{{ route('admin.paises.show', $pais->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
+                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podr� acceder acciones como edici�n y eliminaci�n del mismo" href="{{ route('admin.materiales.show', $material->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -71,11 +71,11 @@
                     </div>
                 </div>
             </div>
-         </div>
+        </div>
     </div>
 @endsection
 
-@section('script') 
+@section('script')
     <script>
         var listSidebar = "li2";
     </script>

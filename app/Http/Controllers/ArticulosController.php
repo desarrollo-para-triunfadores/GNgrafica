@@ -11,7 +11,6 @@ class ArticulosController extends Controller
     public function __construct()
     {
         Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
-        $this->beforeFilter('@find',['only'=>['edit', 'show', 'update','destroy']]); // Acá hacemos llamado a la función find para optimizar código y no repetir instrucciones en todos esos métodos.
     }
 
     public function find (Route $route)
@@ -26,17 +25,8 @@ class ArticulosController extends Controller
      */
     public function index(Request $request)
     {
-        $articulos = Articulo::searchNombres($request->nombre)
-            ->searchEstado($request->estado)
-            ->searchEmpresa($request->idproveedor)
-            ->orderBy('nombre','ASC')
-            ->paginate();
-
-        //Retorno todos los registros de marcas según las especificaciones dadas a la variable recien creada.
-        if($request->ajax()){ //Si la solicitud fue realizada utilizando ajax se devuelven los registros únicamente a la tabla.
-            return response()->json(view('admin.articulos.tablaLogos',compact('articulos'))->render());
-        }
-        return view('admin.marcas.index')->with('marcas',$articulos); //Retorno al cliente la vista asociada al método con la colección de registros necesesarios.
+        $articulos = Articulo::all();
+        return view('admin.articulos.tabla')->with('rubros',$articulos);
     }
 
     /**
