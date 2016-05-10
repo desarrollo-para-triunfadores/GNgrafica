@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Eliminar Usuario: {{ $usuario->name }}</h4>
+                    Eliminar usuario: {{ $usuario->name }}</h4>
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => ['admin.usuarios.destroy', $usuario], 'method' => 'DELETE']) !!}

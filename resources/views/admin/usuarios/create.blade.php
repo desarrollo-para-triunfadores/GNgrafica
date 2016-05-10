@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Registrar Usuario</h4>
+                    Registrar usuario</h4>
             </div>
             <div class="modal-body">               
                 @if ($errors->any())
@@ -63,7 +63,7 @@
                         <br>
                         <hr/>  
                         <br>                                         
-                        <h3>Detalles del Perfil</h3>
+                        <h3>Detalles del perfil</h3>
                         <br>
                         <div class="form-group"><label class="col-sm-3 control-label">Nombre/s</label>
                             <div class="col-sm-9 controls">

@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Actualizar Registro: {{ $rubro->nombre }}</h4>
+                    Actualizar registro: {{ $rubro->nombre }}</h4>
             </div>
             <div class="modal-body">   
                 @include('admin.partes.listaErrores')                                    

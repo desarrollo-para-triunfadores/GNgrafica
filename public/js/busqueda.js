@@ -1,7 +1,7 @@
 $(document).ready(function () {  
     constructorTabla();
     constructorSelect();    
-    abrirCaja();
+    verificarVacio();
     $("#"+listSidebar).addClass("active");
     $('#form-crear').parsley();
     $('#form-actualizar').parsley();
@@ -37,9 +37,13 @@ function ocultarBusqueda()
     }
 }
 
-function abrirCaja()
+function verificarVacio() // este metodo lanza el modal para crear un registro para el lugar ingresado cando se detecta que no existen elementos de ese tipo.
 {
-   if (listSidebar === 'li6'){
-        $( "#botonmodal" ).click();
-    } 
+    if(elemFaltante !== 'nada'){
+        if (listSidebar !== 'li6'){
+            $('.elementoFaltante').html(elemFaltante);
+            $('#botonmodal').html('<i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar '+elemFaltante);
+        }     
+        $('#botonmodal').click();
+    }   
 }

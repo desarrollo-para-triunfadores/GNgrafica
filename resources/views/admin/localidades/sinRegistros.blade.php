@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Detalle de la caja
+    Localidades registradas
 @endsection
 
 @section('sidebar')
@@ -9,10 +9,10 @@
 @endsection
 
 @section('content')
-@include('admin.cajas.modalCreate')
+@include('admin.localidades.create')
 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
     <div class="page-header pull-left">
-        <div class="page-title">Detalle de caja</div>
+        <div class="page-title">Localidades</div>
     </div>        
     <div class="clearfix"></div>
 </div>                            
@@ -27,7 +27,7 @@
             </div>                                     
             <div class="page-content">     
                 <div class="page-toolbar">  
-                    @include('admin.cajas.msjSinCaja')                                                
+                    @include('admin.partes.msjSinRegistros')                                                
                 </div>               
             </div>
         </div>          
@@ -36,7 +36,7 @@
 @endsection
 @section('script') 
     <script>
-        var listSidebar = "li6";
-        var elemFaltante = "nada";
+        var listSidebar = "li2";
+        var elemFaltante = "localidad";
     </script>
 @endsection

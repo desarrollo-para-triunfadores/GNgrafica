@@ -29,7 +29,11 @@ class ProvinciasController extends Controller
     {
         $provincias = Provincia::all();
         $paises = Pais::all()->lists('nombre','id');
-        return view('admin.provincias.tabla')->with('provincias', $provincias)->with('paises', $paises);
+        if ($provincias->count()==0){ // la funcion count te devuelve la cantidad de registros contenidos en la cadena
+            return view('admin.provincias.sinRegistros')->with('paises', $paises); //se devuelve la vista para crear un registro
+        } else {
+            return view('admin.provincias.tabla')->with('provincias', $provincias)->with('paises', $paises); // se devuelven los registros
+        }
     }
 
     /**

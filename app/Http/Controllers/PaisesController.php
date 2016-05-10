@@ -27,7 +27,11 @@ class PaisesController extends Controller
     public function index()
     {
         $paises = Pais::all();
-        return view('admin.paises.tabla')->with('paises',$paises);
+        if ($paises->count()==0){ // la funcion count te devuelve la cantidad de registros contenidos en la cadena
+            return view('admin.paises.sinRegistros'); //se devuelve la vista para crear un registro
+        } else {
+            return view('admin.paises.tabla')->with('paises',$paises); // se devuelven los registros
+        }
     }
 
     /**

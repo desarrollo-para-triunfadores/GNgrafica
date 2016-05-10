@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Usuarios Registrados
+    Usuarios registrados
 @endsection
 
 @section('sidebar')
@@ -18,7 +18,7 @@
         <div class="page-header pull-right">
             <div class="page-toolbar">                      
                 <button data-placement="left" title="Registrar un nuevo Usuario" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <span class="fa fa-user-plus" aria-hidden="true"></span> Registrar Usuario
+                    <span class="fa fa-user-plus" aria-hidden="true"></span> Registrar usuario
                 </button>                      
             </div>
         </div>
@@ -37,14 +37,14 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-yellow">
-                                <div class="panel-heading">Usuarios Registrados</div>
+                                <div class="panel-heading">Usuarios registrados</div>
                                 <div class="panel-body">
                                     @include('admin.partes.msjError')
                                     @include('flash::message')                          
                                      <table class="display dataTable table table-hover table-striped">
                                         <thead>
                                             <tr>                                                
-                                                <th>Apellido y Nombre</th>
+                                                <th>Apellido y nombre</th>
                                                 <th>Email</th>
                                                 <th class="text-center">Acciones</th>
                                             </tr>
@@ -72,6 +72,7 @@
 @endsection
 @section('script') 
     <script>
-        var listSidebar = "li1";       
+        var listSidebar = "li1";    
+        var elemFaltante = "nada";   
     </script>
 @endsection

@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Eliminar Registro: {{ $pais->nombre }}</h4>
+                    Eliminar registro: {{ $pais->nombre }}</h4>
             </div>
             @if ($pais->provincias->count()!=0)                                                                                                                                               
                     @include('admin.partes.msjRegAsociados')   

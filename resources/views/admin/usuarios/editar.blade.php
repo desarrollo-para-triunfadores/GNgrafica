@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Actualizar Registro: {{ $usuario->nombre }}</h4>
+                    Actualizar registro: {{ $usuario->nombre }}</h4>
             </div>
             <div class="modal-body"> 
                 @if ($errors->any())
@@ -38,7 +38,7 @@
                     </div>
                 @endif                        
 {!! Form::open(['route' => ['admin.usuarios.update', $usuario], 'method' => 'PUT', 'id' =>'form-actualizar', 'class' => 'form-horizontal', 'files' => true]) !!}
-                       <h3>Detalles de la Cuenta</h3>
+                       <h3>Detalles de la cuenta</h3>
                       <br>
                         <div class="form-group"><label class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9 controls">
@@ -55,9 +55,9 @@
                         <br>
                         <hr/>  
                         <br>                                         
-                        <h3>Detalles del Perfil</h3>
+                        <h3>Detalles del perfil</h3>
                         <br>
-                        <div class="form-group"><label class="col-sm-3 control-label">Nombre/s y Apellido</label>
+                        <div class="form-group"><label class="col-sm-3 control-label">Nombre/s y apellido</label>
                             <div class="col-sm-9 controls">
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         </div>                       
-                        <div class="form-group"><label class="col-sm-3 control-label">Imagen de Perfil</label>
+                        <div class="form-group"><label class="col-sm-3 control-label">Imagen de perfil</label>
                             <div class="col-sm-9 controls">
                                 <div class="row">
                                     <div class="col-xs-12">

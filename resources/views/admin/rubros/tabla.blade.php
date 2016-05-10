@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Rubros Registrados
+    Rubros registrados
 @endsection
 
 @section('sidebar')
@@ -18,7 +18,7 @@
         <div class="page-header pull-right">
             <div class="page-toolbar">                      
                 <button data-placement="bottom" title="Registrar un nuevo rubro de empresa" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Rubro
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar rubro
                 </button>                                  
             </div>
         </div>
@@ -71,5 +71,6 @@
 @section('script') 
     <script>
         var listSidebar = "li3";
+        var elemFaltante = "nada";
     </script>
 @endsection

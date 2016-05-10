@@ -31,7 +31,6 @@ class CajasController extends Controller
         if ($caja===null){ //al llegar aca preguta si enncontro algo(si $caja no es un objeto vacio o null)
              return view('admin.cajas.create'); //se devuelve la vista para abrir una caja
         } else {
-
             return view('admin.cajas.index')->with('caja',$caja); // se devuelve la caja en cuestion.
         }
     }

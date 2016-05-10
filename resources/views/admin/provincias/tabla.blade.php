@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Provincias Registradas
+    Provincias registradas
 @endsection
 
 @section('sidebar')
@@ -22,7 +22,7 @@
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.localidades.index') }}" title="Visualizar a los registros de localidades"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Localidades</a>                                   
                 </div> 
                 <button data-placement="bottom" title="Registrar una nueva provincia" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Provincia
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar provincia
                 </button> 
             </div>
         </div>
@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-yellow">
-                                <div class="panel-heading">Provincias Registradas</div>
+                                <div class="panel-heading">Provincias registradas</div>
                                 <div class="panel-body">                                
                                     @include('admin.partes.msjError')
                                     @include('flash::message')                         
@@ -78,5 +78,6 @@
 @section('script') 
     <script>
         var listSidebar = "li2";
+        var elemFaltante = "nada";
     </script>
 @endsection

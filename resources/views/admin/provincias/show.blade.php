@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Detalle del País
+    Detalle de la provincia
 @endsection
 
 @section('sidebar')
@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <div class="panel">                               
                                 <div class="panel-body">                                                                                
-                                    <h3>Detalles del Registro</h3>
+                                    <h3>Detalles del registro</h3>
                                     <br>
                                     @include('admin.partes.msjError')
                                     @include('flash::message') 
@@ -63,7 +63,7 @@
                                                                 <td><h4>{{ $provincia->pais->nombre }}</h4></td>
                                                             </tr>                                                             
                                                             <tr>
-                                                                <td><h4 class="box-heading">Fecha de Alta:</h4></td>
+                                                                <td><h4 class="box-heading">Fecha de alta:</h4></td>
                                                                 <td><h4>{{ $provincia->created_at->diffForHumans() }}</h4></td>
                                                             </tr> 
                                                             <tr>
@@ -82,8 +82,8 @@
                                             <hr/>
                                             <br>   
                                             <div class="pull-right"> 
-                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar Datos</i></button>                                                                          
-                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-confirmar"  title="Confirmar eliminación de datos." class="btn btn-danger">Eliminar Registro</i></button>
+                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar datos</i></button>                                                                          
+                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-confirmar"  title="Confirmar eliminación de datos." class="btn btn-danger">Eliminar registro</i></button>
                                             </div>    
                                         </div>                            
                                     </div>  
@@ -101,5 +101,6 @@
 @section('script') 
     <script>
         var listSidebar = "li2";
+        var elemFaltante = "nada";
     </script>
 @endsection

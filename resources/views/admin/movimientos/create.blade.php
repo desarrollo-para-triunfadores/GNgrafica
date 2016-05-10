@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
-                <h4 class="modal-title">Registrar Movimiento</h4>
+                <h4 class="modal-title">Registrar movimiento</h4>
             </div>
             <div class="modal-body">               
                 @if ($errors->any())

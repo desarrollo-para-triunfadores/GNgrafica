@@ -123,8 +123,8 @@
                                             <hr/>
                                             <br>   
                                             <div class="pull-right"> 
-                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar Datos</i></button>                                                                          
-                                                <button type="button"  data-hover="tooltip" title="Confirmar eliminación de datos. " data-toggle="modal" data-target="#modal-confirmar"  class="btn btn-danger">Eliminar Registro</i></button>
+                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar datos</i></button>                                                                          
+                                                <button type="button"  data-hover="tooltip" title="Confirmar eliminación de datos. " data-toggle="modal" data-target="#modal-confirmar"  class="btn btn-danger">Eliminar registro</i></button>
                                             </div>    
                                         </div>                            
                                     </div>  
@@ -140,6 +140,7 @@
 @endsection
 @section('script') 
     <script>
-        var listSidebar = "li6";
+        var listSidebar = "li4";
+        var elemFaltante = "nada";
     </script>
 @endsection

@@ -26,8 +26,12 @@ class RubrosController extends Controller
      */
     public function index()
     {
-        $rubros = Rubro::all();
-        return view('admin.rubros.tabla')->with('rubros',$rubros);
+        $rubros = Rubro::all(); // Aca se buscan todos los registros
+        if ($rubros->count()==0){ // la funcion count te devuelve la cantidad de registros contenidos en la cadena
+             return view('admin.rubros.sinRegistros'); //se devuelve la vista para crear un registro
+        } else {
+            return view('admin.rubros.tabla')->with('rubros',$rubros); // se devuelven los registros
+        }
     }
 
     public function find (Route $route)

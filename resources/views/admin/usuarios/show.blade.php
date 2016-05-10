@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Detalle del Usuario
+    Detalle del usuario
 @endsection
 
 @section('sidebar')
@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <div class="panel">                               
                                 <div class="panel-body">                                                                                
-                                    <h3>Detalles del Registro</h3>
+                                    <h3>Detalles del registro</h3>
                                     <br>
                                     @include('admin.partes.msjError')
                                     @include('flash::message') 
@@ -64,7 +64,7 @@
                                                     <table class="table table-striped table-hover">
                                                         <tbody> 
                                                             <tr>
-                                                                <td><h4 class="box-heading">Nombre y Apellido:</h4></td>
+                                                                <td><h4 class="box-heading">Nombre y apellido:</h4></td>
                                                                 <td><h4>{{ $usuario->name }}</h4></td>
                                                             </tr> 
                                                             <tr>
@@ -72,7 +72,7 @@
                                                                 <td><h4>{{ $usuario->email }}</h4></td>
                                                             </tr> 
                                                             <tr>
-                                                                <td><h4 class="box-heading">Fecha de Alta:</h4></td>
+                                                                <td><h4 class="box-heading">Fecha de alta:</h4></td>
                                                                 <td><h4>{{ $usuario->created_at->diffForHumans() }}</h4></td>
                                                             </tr>                                                                                                                                    
                                                         </tbody>
@@ -87,9 +87,9 @@
                                             <br>   
                                             <div class="pull-right"> 
                                                 @if ($usuario->id == Auth::user()->id)
-                                                    <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizarPass"  title="Acceder a la pantalla de actualización de contraseña."  class="btn btn-info">  Actualizar Password</i></button>                                                                          
+                                                    <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizarPass"  title="Acceder a la pantalla de actualización de contraseña."  class="btn btn-info">  Actualizar contraseña</i></button>                                                                          
                                                 @endif                                                
-                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar Datos</i></button>                                                                          
+                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar datos</i></button>                                                                          
                                                 <button type="button"  data-hover="tooltip" title="Confirmar eliminación de datos. " data-toggle="modal" data-target="#modal-confirmar"  class="btn btn-danger">Eliminar Registro</i></button>
                                             </div>    
                                         </div>                            
@@ -108,5 +108,6 @@
 @section('script') 
     <script>
         var listSidebar = "li1";
+        var elemFaltante = "nada";
     </script>
 @endsection

@@ -28,7 +28,11 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.usuarios.tabla')->with('usuarios',$users);
+        if ($users->count()==0){ // la funcion count te devuelve la cantidad de registros contenidos en la cadena
+             return view('admin.usuarios.sinRegistros'); //se devuelve la vista para crear un registro
+        } else {
+             return view('admin.usuarios.tabla')->with('usuarios',$users); // se devuelven los registros
+        }   
     }
 
     /**

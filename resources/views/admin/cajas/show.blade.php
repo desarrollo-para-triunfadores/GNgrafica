@@ -135,5 +135,6 @@
 @section('script') 
     <script>
         var listSidebar = "li5";
+        var elemFaltante = "nada";
     </script>
 @endsection

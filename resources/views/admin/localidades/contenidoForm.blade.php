@@ -1,4 +1,4 @@
-<h3>Detalles del Registro</h3>
+<h3>Detalles del registro</h3>
 <br>
 <div class="form-group"><label class="col-sm-3 control-label">Nombre</label>
     <div class="col-sm-9 controls">

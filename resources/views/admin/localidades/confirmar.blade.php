@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Eliminar Registro: {{ $localidad->nombre }}</h4>
+                    Eliminar registro: {{ $localidad->nombre }}</h4>
             </div>
             @if (($localidad->clientes->count()!=0))                                                                                                                                               
                     @include('admin.partes.msjRegAsociados')   

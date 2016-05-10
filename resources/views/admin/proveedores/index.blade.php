@@ -52,6 +52,7 @@
     <script src="{{ asset('proveedores.js') }}"></script>
     <script>
         var route = "/admin/proveedores";
-        var listSidebar = "li6";
+        var listSidebar = "li4";
+        var elemFaltante = "nada";
     </script>
 @endsection

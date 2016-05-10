@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Registrar País</h4>
+                    Registrar país</h4>
             </div>
             <div class="modal-body">               
                 @if ($errors->any())
