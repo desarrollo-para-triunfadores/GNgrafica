@@ -43,13 +43,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-yellow">
-<<<<<<< HEAD
                                 <div class="panel-heading">Países registrados</div>
                                 <div class="panel-body">  
-=======
-                                <div class="panel-heading">Países Registrados</div>
-                                <div class="panel-body">
->>>>>>> 1bdbd9eaad2d27c8ffdb8abfa37f11eb6813352e
                                     @include('admin.partes.msjError')
                                     @include('flash::message')
                                     <table class="dataTable display table table-hover table-striped" >
