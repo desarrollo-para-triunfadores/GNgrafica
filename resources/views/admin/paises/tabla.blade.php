@@ -28,41 +28,48 @@
         </div>
         <div class="clearfix"></div>
     </div>
+
+
     <div class="page-content">
         <div id="tab-general">
             <div class="row mbl">
-                <div class="col-lg-12">                                
+                <div class="col-lg-12">
                     <div class="col-md-12">
                         <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
                         </div>
-                    </div>                                
+                    </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-yellow">
+<<<<<<< HEAD
                                 <div class="panel-heading">Países registrados</div>
                                 <div class="panel-body">  
+=======
+                                <div class="panel-heading">Países Registrados</div>
+                                <div class="panel-body">
+>>>>>>> 1bdbd9eaad2d27c8ffdb8abfa37f11eb6813352e
                                     @include('admin.partes.msjError')
-                                    @include('flash::message')                                                                                              
+                                    @include('flash::message')
                                     <table class="dataTable display table table-hover table-striped" >
                                         <thead>
-                                            <tr>                                                
-                                                <th>Nombre</th>                                                
+                                            <tr>
+                                                <th>Nombre</th>
                                                 <th class="text-center">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($paises as $pais)
-                                            <tr>                                                             
-                                                <td>  {{ $pais->nombre }}</td>                                               
+                                            <tr>
+                                                <td>  {{ $pais->nombre }}</td>
                                                 <td class="text-center">
                                                     <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrá acceder acciones como edición y eliminación del mismo" href="{{ route('admin.paises.show', $pais->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
-                                                </td>                                                
-                                            </tr>                                                  
+                                                </td>
+                                            </tr>
                                         @endforeach
                                         </tbody>
-                                    </table>            
+                                    </table>
                                 </div>
                             </div>
                         </div>

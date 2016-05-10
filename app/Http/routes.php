@@ -21,6 +21,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
    Route::resource('provincias','ProvinciasController');
    Route::resource('localidades','LocalidadesController');
    Route::resource('rubros','RubrosController');
+
+   Route::resource('tipoArticulos','TiposController');
+   Route::resource('materiales','MaterialesController');
+   Route::resource('talles','TallesController');
+   Route::resource('articulos','ArticulosController');
+
    Route::resource('proveedores','ProveedoresController');
    Route::resource('configuraciones','ConfigController');
    Route::resource('cajas','CajasController');

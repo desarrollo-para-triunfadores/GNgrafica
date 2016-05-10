@@ -79,7 +79,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-map-marker"></i>
-                                            {!! Form::text('altura', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}
+                                            {!! Form::number('altura', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-phone"></i>
-                                            {!! Form::text('telefono', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}                                
+                                            {!! Form::number('telefono', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-mobile"></i>
-                                            {!! Form::text('celular', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}                                
+                                            {!! Form::number('celular', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-at"></i>
-                                            {!! Form::url('web', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}                                
+                                            {!! Form::text('web', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}
                                         </div>
                                     </div>
                                 </div>

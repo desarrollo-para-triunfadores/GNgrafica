@@ -49,9 +49,7 @@ class ProveedoresController extends Controller
     {
         $proveedor = new Proveedor($request->all());
 
-
         //Manipulación de Imágenes...
-
         $nombreImagen = 'sin imagen';                   //esto saque el 28/4 18:00 ***JUAMPY
 
         if ($request->file('imagen'))
@@ -92,37 +90,34 @@ class ProveedoresController extends Controller
     public function update(ProveedorRequestEdit $request, $id)
     {
     	$proveedor = Proveedor::find($id);
-
         if ($request->file('imagen'))
-        {                  
-            $logo_proveedor = $proveedor->logo_proveedor;
-            $file = $request->file('imagen');        
+        {
+            $file = $request->file('imagen');
             $nombreImagen = 'GN_' . time() . '.' . $file->getClientOriginalExtension();            
-            if (Storage::disk('proveedores')->exists($logo_proveedor->nombre))
+            if (Storage::disk('proveedores')->exists($proveedor->imagen))
              {
-                Storage::disk('proveedores')->delete($logo_proveedor->nombre);   // Borramos la imagen anterior.      
+                Storage::disk('proveedores')->delete($proveedor->imagen);   // Borramos la imagen anterior.
              }
-            $logo_proveedor->nombre = $nombreImagen;  // Actualizamos el nombre de la nueva imagen.
-            $logo_proveedor->save();           
-            Storage::disk('proveedores')->put($nombreImagen, \File::get($file));  // Movemos la imagen nueva al directorio /imagenes/empresas   
+            $proveedor->fill($request->all());
+            $proveedor->imagen= $nombreImagen;          //Actualizamos el nombre de la nueva imagen.
+            Storage::disk('proveedores')->put($nombreImagen, \File::get($file));  // Movemos la imagen nueva al directorio /imagenes/proveedores
+            $proveedor->save();
+            Flash::success("Se ha realizado la actualización del proveedor: ".$proveedor->name.".");
+            return redirect()->route('admin.proveedores.show', $id);
         }  
 
         $proveedor->fill($request->all());
         $proveedor->save();
         Flash::success("Se ha realizado la actualización del registro: ".$proveedor->nombre.".");
-        return redirect()->route('admin.proveedor.show', $id);
+        return redirect()->route('admin.proveedores.show', $id);
     }
+
 
 
     public function destroy($id)
     {
     	$proveedor = Proveedor::find($id);
-
-        $logo_proveedor = $proveedor->logo_proveedor;
-        if ($logo_proveedor->nombre != 'sin imagen')
-        {            
-            Storage::disk('proveedores')->delete($logo_proveedor->nombre); // Borramos la imagen asociada.
-        } 
+        Storage::disk('proveedores')->delete($proveedor->imagen); // Borramos la imagen asociada.
         $proveedor->delete();        
         Flash::error("Se ha realizado la eliminación del registro: ".$proveedor->nombre.".");        
         return redirect()->route('admin.proveedores.index');
