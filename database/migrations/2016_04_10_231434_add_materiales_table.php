@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTallesTable extends Migration
+class AddMaterialesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class AddTallesTable extends Migration
      */
     public function up()
     {
-        Schema::create('talles', function (Blueprint $table) {
+        Schema::create('materiales', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('talle');
-            $table->double('alto');
-            $table->double('ancho');
+            $table->string('nombre');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class AddTallesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('talles');
+        Schema::drop('materiales');
     }
 }

@@ -20,7 +20,8 @@ class MaterialRequestCreate extends Request
     public function rules()
     {
         return [
-            'nombre' => 'required|max:50|unique:materiales'
+            'nombre' => 'required|max:50|unique:materiales',
+            'descripcion' => 'max:50'
         ];
     }
 }

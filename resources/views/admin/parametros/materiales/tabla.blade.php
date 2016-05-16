@@ -59,7 +59,7 @@
                                                 <td>  {{ $material->nombre }}</td>
                                                 <td>{{ $material->descripcion }}</td>
                                                 <td class="text-center">
-                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrá acceder acciones como edición y eliminación del mismo" href="{{ route('admin.materiales.show', $material->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
+                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podr&aacute acceder acciones como edici&oacuten y eliminaci&oacuten del mismo" href="{{ route('admin.materiales.show', $material->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
                                                 </td>
                                             </tr>
                                         @endforeach

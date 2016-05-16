@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Registrar un Material</h4>
+                    Registrar un Talle </h4>
             </div>
             <div class="modal-body">               
                 @if ($errors->any())
@@ -21,8 +21,8 @@
                         </ul>                        
                     </div>
                 @endif
-{!! Form::open(['route' => 'admin.materiales.store', 'method' => 'POST', 'id' =>'form-crear', 'class' => 'form-horizontal']) !!}
-                             @include('admin.parametros.materiales.contenidoForm')
+{!! Form::open(['route' => 'admin.talles.store', 'method' => 'POST', 'id' =>'form-crear', 'class' => 'form-horizontal']) !!}
+                             @include('admin.parametros.talles.contenidoForm')
                         {!! Form::submit('Crear Registro', ['class' => 'btn btn-green btn-block']) !!}  
                         <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
                     Cerrar</button>                        

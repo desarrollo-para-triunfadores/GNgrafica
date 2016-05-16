@@ -27,7 +27,6 @@ class MaterialesController extends Controller
 
     public function parametrosPrincipal()       // hice que que el Slidebar apunte aca y que este te lleve a la pantalla de PARAMETROS
     {
-
     }
 
     public function create()
@@ -47,7 +46,7 @@ class MaterialesController extends Controller
     public function show($id)
     {
         $material = Material::find($id);
-        return view('admin.materiales.show')->with('pais',$material);
+        return view('admin.parametros.materiales.show')->with('material',$material);
     }
 
 
@@ -61,8 +60,8 @@ class MaterialesController extends Controller
         $material = Material::find($id);
         $material->fill($request->all());
         $material->save();
-        Flash::success("Se ha realizado la actualización del registro: ".$material->nombre.".");
-        return redirect()->route('admin.parametros.materiales.show', $id);
+        Flash::success("Se ha realizado la actualización del material");
+        return redirect()->route('admin.materiales.show', $id);
     }
 
 
@@ -70,7 +69,7 @@ class MaterialesController extends Controller
     {
         $material = Material::find($id);
         $material->delete();
-        Flash::error("Se ha realizado la eliminación del registro: ".$material->nombre.".");
-        return redirect()->route('admin.parametros.materiales.index');
+        Flash::error("Se ha eliminado el material: ".$material->nombre."de los registros.");
+        return redirect()->route('admin.materiales.index');
     }
 }

@@ -8,6 +8,8 @@ use Carbon\Carbon;
 use Laracasts\Flash\Flash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TipoRequestCreate;
+use App\Http\Requests\TipoRequestEdit;
 
 class TiposController extends Controller
 {
@@ -25,7 +27,7 @@ class TiposController extends Controller
     public function index()
     {
         $tipos = Tipo::all();
-        return view('admin.parametros.tiposArticulos.tabla')->with('tipos',$tipos);
+        return view('admin.parametros.tipoArticulos.tabla')->with('tipos',$tipos);
     }
 
     /**
@@ -33,64 +35,41 @@ class TiposController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
-        //
+        return view('admin.parametros.tipoArticulos.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(TipoRequestCreate $request)
     {
-        //
+        $tipo = new Tipo($request->all());
+        $tipo->save();
+        Flash::success('El tipo de articulo "'. $tipo->nombre.'" ha sido registrado de forma existosa.');
+        return redirect()->route('admin.tipoArticulos.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        //
+        $tipo= Tipo::find($id);
+        return view('admin.parametros.tipoArticulos.show')->with('tipo',$tipo);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(TipoRequestEdit $request, $id)
     {
-        //
+        $tipo = Talle::find($id);
+        $tipo->fill($request->all());
+        $tipo->save();
+        Flash::success("Se ha realizado la actualización del registro: ".$tipo->nombre.".");
+        return redirect()->route('admin.tipoArticulos.show', $id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $tipo = Tipo::find($id);
+        $tipo->delete();
+        Flash::error("Se ha eliminado el talle: ".$tipo->nombre.".");
+        return redirect()->route('admin.tipoArticulos.index');
     }
 }

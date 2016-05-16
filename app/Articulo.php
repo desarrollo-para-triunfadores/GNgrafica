@@ -3,23 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Articulo extends Model implements SluggableInterface
+
+class Articulo extends Model
 {
-
-    use SluggableTrait;
-
-    protected $sluggable = [
-        'build_from' => 'nombre',
-        'save_to'    => 'slug',
-    ];
 
 
 	protected $table =  "articulos";
 
-    protected $fillable = ['nombre', 'proveedor_id', 'tipo_id', 'material_id','color','alto','ancho','talle_id', 'stockMin', 'descripcion'];
+    protected $fillable = ['nombre', 'proveedor_id', 'material_id', 'tipo_id','color','alto','ancho','talle_id', 'stockMin', 'descripcion'];
 
     public function proveedor()   
     {

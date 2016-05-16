@@ -56,7 +56,11 @@
                                                             <tr>
                                                                 <td><h4 class="box-heading">Nombre:</h4></td>
                                                                 <td><h4>{{ $material->nombre }}</h4></td>
-                                                            </tr> 
+                                                            </tr>
+                                                            <tr>
+                                                                <td><h4 class="box-heading">Descripcion:</h4></td>
+                                                                <td><h4>{{ $material->descripcion }}</h4></td>
+                                                            </tr>
                                                             <tr>
                                                                 <td><h4 class="box-heading">Fecha de Alta:</h4></td>
                                                                 <td><h4>{{ $material->created_at->diffForHumans() }}</h4></td>

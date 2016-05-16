@@ -9,20 +9,20 @@
 @endsection
 
 @section('content')
-    @include('admin.parametros.talles.editar')
-    @include('admin.parametros.talles.confirmar')
+    @include('admin.parametros.tipoArticulos.editar')
+    @include('admin.parametros.tipoArticulos.confirmar')
     <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
         <div class="page-header pull-left">
             <div class="page-title">
-                Material: {{ $talle->nombre }}</div>
+                Tipo de Articulo: {{ $tipo->nombre }}</div>
         </div>
         <div class="page-header pull-right">
             <div class="page-toolbar">
                 <div class="btn-group" role="group" aria-label="...">
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.materiales.index') }}" title="Visualizar los materiales para indumentaria"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Materiales</a>
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.tipoArticulos.index') }}" title="Visualizar tipos de articulos"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Tipos</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.talles.index') }}" title="Visualizar tipos de articulos"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Talles</a>
                 </div>
-                <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.talles.index') }}" title="Volver a los Registros de Talles"  class="btn btn-blue"> <span class="fa fa-arrow-circle-o-left" aria-hidden="true"></span> Volver</a>
+                <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.tipoArticulos.index') }}" title="Volver a los Registros de tipos de articulo"  class="btn btn-blue"> <span class="fa fa-arrow-circle-o-left" aria-hidden="true"></span> Volver</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -55,19 +55,19 @@
                                                             <tbody>
                                                             <tr>
                                                                 <td><h4 class="box-heading">Nombre:</h4></td>
-                                                                <td><h4>{{ $talle->nombre }}</h4></td>
+                                                                <td><h4>{{ $tipo->nombre }}</h4></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><h4 class="box-heading">Descripcion:</h4></td>
-                                                                <td><h4>{{ $talle->descripcion }}</h4></td>
+                                                                <td><h4>{{ $tipo->descripcion }}</h4></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><h4 class="box-heading">Fecha de Alta:</h4></td>
-                                                                <td><h4>{{ $talle->created_at->diffForHumans() }}</h4></td>
+                                                                <td><h4>{{ $tipo->created_at->diffForHumans() }}</h4></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><h4 class="box-heading">Cantidad de articulos que usan este material:</h4></td>
-                                                                <td><h4>{{ $talle->articulos->count() }}</h4></td>
+                                                                <td><h4>{{ $tipo->articulos->count() }}</h4></td>
                                                             </tr>
                                                             </tbody>
                                                         </table>

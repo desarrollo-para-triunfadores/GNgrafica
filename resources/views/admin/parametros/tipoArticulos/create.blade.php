@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Registrar Tipo de Producto</h4>
+                    Registrar un Tipo de Articulo</h4>
             </div>
             <div class="modal-body">               
                 @if ($errors->any())
@@ -21,8 +21,8 @@
                         </ul>                        
                     </div>
                 @endif
-{!! Form::open(['route' => 'admin.tipoproducto.store', 'id' =>'form-crear', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
-                        @include('admin.tipos.contenidoForm')                                    
+{!! Form::open(['route' => 'admin.tipoArticulos.store', 'method' => 'POST', 'id' =>'form-crear', 'class' => 'form-horizontal']) !!}
+                             @include('admin.parametros.tipoArticulos.contenidoForm')
                         {!! Form::submit('Crear Registro', ['class' => 'btn btn-green btn-block']) !!}  
                         <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
                     Cerrar</button>                        

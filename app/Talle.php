@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Talle extends Model
 {
     protected $table =  "talles";
-    protected $fillable = ['talle','alto','ancho'];
+    protected $fillable = ['nombre','descripcion'];
 
     public function articulos()
     {

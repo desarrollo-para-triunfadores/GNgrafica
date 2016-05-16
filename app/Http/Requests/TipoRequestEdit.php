@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Routing\Route;
 
-class MaterialRequestEdit extends Request
+class TipoRequestEdit extends Request
 {
     public function __construct(Route $route)
     {
@@ -17,11 +17,15 @@ class MaterialRequestEdit extends Request
         return true;
     }
 
-
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
     public function rules()
     {
         return [
-            'nombre' => 'required|max:50|unique:materiales,nombre,'.$this->route->getParameter('materiales'),
+            'nombre' => 'required|max:100|unique:tipos, nombre,'.$this->route->getParameter('tipos'),
             'descripcion'
         ];
     }
