@@ -18,6 +18,7 @@ class AddArticulosTable extends Migration
             $table->string('color');
             $table->string('alto');
             $table->string('ancho');
+            $table->string('estado');
 
             $table->integer('material_id')->unsigned();
             $table->foreign('material_id')->references('id')->on('materiales')->onDelete('cascade');

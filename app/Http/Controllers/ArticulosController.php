@@ -2,89 +2,63 @@
 
 namespace App\Http\Controllers;
 
+use App\Articulo;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\ArticuloRequestCreate;
+use App\Http\Requests\ArticuloRequestEdit;
+use Laracasts\Flash\Flash;
+use Illuminate\Routing\Route;
 
 class ArticulosController extends Controller
 {
     public function __construct()
     {
-        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
+        Carbon::setlocale('es'); // Instancio en Esp el manejador de fechas de Laravel
     }
 
     public function find (Route $route)
     {
-        $this->marca = Marca::find($route->getParameter('articulos'));  // marcas es el atributo que figura junto al nombre de la ruta en el archivo de rutas.
+        $this->articulo = Articulo::find($route->getParameter('articulos'));  // marcas es el atributo que figura junto al nombre de la ruta en el archivo de rutas.
     }
 
-    /**
-     * Mostrar una lista de los recursos.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
+
+    public function index()
     {
         $articulos = Articulo::all();
-        return view('admin.articulos.tabla')->with('rubros',$articulos);
+        if ($articulos->count() == 0) { // la funcion count te devuelve la cantidad de registros contenidos en la cadena
+            return view('admin.articulos.sinRegistros'); //se devuelve la vista para crear un registro
+        } else {
+            return view('admin.articulos.tabla')->with('articulos', $articulos);
+        }
     }
 
-    /**
-     * Mostrar el formulario para crear un nuevo recurso.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
     }
 
-    /**
-     * Guardo un recurso recién creado en la base de datos.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(MarcaRequestCreate $request)
+
+    public function store(ArticuloRequestCreate $request)
     {
-
-        //Creación de los registro de Marca.
-
-        $articulo = new Marca($request->all()); // Guardamos los valores cargados en la vista en una variable de tipo marca.
+        $articulo = new Articulo($request->all()); // Guardamos los valores cargados en la vista en una variable de tipo marca.
         $articulo->save(); //se almacena en la base de datos.
 
-        Flash::success('La marca "'. $articulo->nombre.'"" ha sido registrada de forma existosa.');
+        Flash::success('El articulo "'. $articulo->nombre.'"" ha sido registrada de forma existosa.');
         return redirect()->route('admin.articulos.index');
     }
 
-    /**
-     * Visualizar el recurso especificado.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        return view('admin.articulos.show')->with('articulo', $this->articulo);
+        $articulo = Articulo::find($id);
+        return view('admin.articulos.show')->with('articulo', $articulo);
     }
 
-    /**
-     * Mostrar el formulario para editar el recurso especificado.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-    }
 
-    /**
-     * Actualizar el recurso especificado en el almacenamiento.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(MarcaRequestEdit $request, $id)
+    public function update(ArticuloaRequestEdit $request, $id)
     {
         $this->articulo->fill($request->all());
 
@@ -93,25 +67,20 @@ class ArticulosController extends Controller
             $this->marca->estado = 0;
             foreach ($this->marca->productos as $producto)
             {
-                $producto->estado = 0;
-                $producto->save();
+
             }
         }
-        $this->marca->save();
-        Flash::success("Se ha realizado la actualización del registro: ".$this->marca->nombre.".");
+        $this->articulo->save();
+        Flash::success("Se ha realizado la actualizaciÃ³n del registro: ".$this->marca->nombre.".");
         return redirect()->route('admin.marcas.show', $id);
     }
 
-    /**
-     * Eliminar el recurso especificado de la base de datos.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        $this->marca->delete(); // Borramos el registro.
-        Flash::error("Se ha realizado la eliminación del registro: ".$this->marca->nombre.".");
-        return redirect()->route('admin.marcas.index');
+        $articulo = Articulo::find($id);
+        $articulo->delete();
+        Flash::error("Se ha eliminado el articulo ".$articulo->nombre.".");
+        return redirect()->route('admin.articulos.index');
     }
 }

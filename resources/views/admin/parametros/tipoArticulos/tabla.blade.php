@@ -49,6 +49,7 @@
                                         <thead>
                                         <tr>
                                             <th>Nombre</th>
+                                            <th>Descripcion</th>
                                             <th class="text-center">Acciones</th>
                                         </tr>
                                         </thead>

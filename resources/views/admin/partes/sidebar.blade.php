@@ -71,6 +71,15 @@
                         </a>
                     </li>
 
+                    <li id="li9">
+                        <a data-toggle="tooltip" data-placement="right" title="Ir a los registros de nuestros clientes" href="{{ route('admin.clientes.index') }}">
+                            <i class="fa fa-child">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Clientes</span>
+                        </a>
+                    </li>
+
 
                 </ul>
             </div>

@@ -5,7 +5,7 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Registrar Articulo</h4>
+                    Registrar Articulo para venta</h4>
             </div>
             <div class="modal-body">
                 @include('admin.partes.listaErrores')

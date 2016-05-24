@@ -11,7 +11,7 @@ class Articulo extends Model
 
 	protected $table =  "articulos";
 
-    protected $fillable = ['nombre', 'proveedor_id', 'material_id', 'tipo_id','color','alto','ancho','talle_id', 'stockMin', 'descripcion'];
+    protected $fillable = ['nombre', 'proveedor_id', 'material_id', 'tipo_id','color','alto','ancho','talle_id', 'stockMin', 'stock', 'descripcion', 'estado'];
 
     public function proveedor()   
     {

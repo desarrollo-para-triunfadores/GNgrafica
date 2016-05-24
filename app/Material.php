@@ -14,4 +14,11 @@ class Material extends Model
     {
         return $this->hasMany('App\Articulo');
     }
+
+    /*************************************************************/
+
+    public function scopeSearchValidos($query)
+    {
+        return $query->where('id',  '>', 1);
+    }
 }
