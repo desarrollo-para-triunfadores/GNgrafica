@@ -8,7 +8,7 @@ class Cliente extends Model
 {
     protected $table =  "clientes";
 
-    protected $fillable = ['nombre', 'apellido', 'empresa', 'responIva_id', 'cuit', 'dni', 'descripcion', 'telefono', 'email', 'localidad_id', 'direccion'];
+    protected $fillable = ['nombre', 'apellido', 'empresa', 'responiva_id', 'cuit', 'dni', 'descripcion', 'telefono', 'email', 'localidad_id', 'direccion'];
 
     public function ventas()
     {
@@ -20,9 +20,9 @@ class Cliente extends Model
     	return $this->belongsTo('App\Localidad');
     }
 
-    public function responIva()
+    public function responiva()
     {
-        return $this->belongsTo('App\ResponIva');
+        return $this->belongsTo('App\Responiva');
     }
 
  /*********************************************************************************************************/
@@ -33,7 +33,7 @@ class Cliente extends Model
         {
             return $query;
         } else {
-            return $query->where('responIva_id', 'LIKE', $idresponIva);
+            return $query->where('responiva_id', 'LIKE', $idresponIva);
         }
     }
 

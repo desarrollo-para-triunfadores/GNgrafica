@@ -11,7 +11,7 @@ class Articulo extends Model
 
 	protected $table =  "articulos";
 
-    protected $fillable = ['nombre', 'proveedor_id', 'material_id', 'tipo_id','color','alto','ancho','talle_id', 'stockMin', 'stock', 'descripcion', 'estado'];
+    protected $fillable = ['nombre', 'proveedor_id', 'material_id', 'tipo_id','color_id','alto','ancho','talle_id', 'stockMin', 'stock', 'descripcion', 'estado'];
 
     public function proveedor()   
     {
@@ -22,6 +22,12 @@ class Articulo extends Model
     {
         return $this->belongsTo('App\Tipo');
     }
+
+    public function color()
+    {
+        return $this->belongsTo('App\Color');
+    }
+
 
     public function material()
     {
@@ -92,6 +98,16 @@ class Articulo extends Model
             return $query;
         } else {
             return $query->where('talle_id', 'LIKE', $idtalle);
+        }
+    }
+
+    public function scopeSearchColor($query, $idcolor)
+    {
+        if ($idcolor == "-1")
+        {
+            return $query;
+        } else {
+            return $query->where('color_id', 'LIKE', $idcolor);
         }
     }
    

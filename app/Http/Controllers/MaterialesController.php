@@ -25,9 +25,6 @@ class MaterialesController extends Controller
         return view('admin.parametros.materiales.tabla')->with('materiales',$materiales);
     }
 
-    public function parametrosPrincipal()       // hice que que el Slidebar apunte aca y que este te lleve a la pantalla de PARAMETROS
-    {
-    }
 
     public function create()
     {
@@ -49,10 +46,6 @@ class MaterialesController extends Controller
         return view('admin.parametros.materiales.show')->with('material',$material);
     }
 
-
-    public function edit($id)
-    {
-    }
 
 
     public function update(MaterialRequestEdit $request, $id)

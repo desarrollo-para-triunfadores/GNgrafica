@@ -64,7 +64,7 @@
                                             <tr>
                                                 <td>{{ $cliente->apellido }}</td>
                                                 <td>{{ $cliente->nombre }}</td>
-                                                <td>{{ $cliente->responIva }}</td>
+                                                <td>{{ $cliente->responIva->nombre }}</td>
 
                                                 <td>{{ $cliente->responIva }}</td>
                                                 <td>{{ $cliente->responIva }}</td>

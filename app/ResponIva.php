@@ -14,4 +14,10 @@ class ResponIva extends Model
     {
         return $this->hasMany('App\Cliente');
     }
+
+    /***************************************************************/
+    public function scopeSearchValidos($query)
+    {
+        return $query->where('id',  '>', 1);
+    }
 }

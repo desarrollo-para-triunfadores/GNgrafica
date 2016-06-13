@@ -16,7 +16,7 @@ class AddClientesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('responiva_id')->unsigned();
+            $table->integer('responiva_id')->unsigned();
             $table->foreign('responiva_id')->references('id')->on('responIva')->onDelete('cascade');
             $table->string('empresa');
             $table->string('descripcion');

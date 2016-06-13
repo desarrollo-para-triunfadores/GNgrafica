@@ -11,9 +11,9 @@ class ClienteComposer {
     {
         $clienteslista = Cliente::orderBy('apellido','ASC')->lists('apellido','apellido');
         $localidades = Localidad::orderBy('nombre','ASC')->lists('nombre','id');
-        $responIva = ResponIva::orderBy('nombre','ASC')->lists('nombre','id');
+        $responiva = ResponIva::orderBy('nombre','ASC')->lists('nombre','id');
 
-        $view->with('responIva', json_decode($responIva, true))
+        $view->with('responIva', json_decode($responiva, true))
              ->with('clienteslista', json_decode($clienteslista, true))
              ->with('localidades', json_decode($localidades, true));
 
