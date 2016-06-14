@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-@include('admin.paises.create')
+@include('admin.parametros.responiva.create')
 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
     <div class="page-header pull-left">
         <div class="page-title">Responsabilidades ante el IVA</div>
@@ -37,6 +37,6 @@
 @section('script') 
     <script>
         var listSidebar = "li2";
-        var elemFaltante = "país";
+        var elemFaltante = "responiva";
     </script>
 @endsection

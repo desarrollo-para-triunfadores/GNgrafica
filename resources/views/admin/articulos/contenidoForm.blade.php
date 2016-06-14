@@ -30,7 +30,7 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-pencil"></i>
-                    {!! Form::select('talle_id', $talles, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}
+                    {!! Form::select('talle_id', $talles, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true']) !!}
                 </div>
             </div>
         </div>
@@ -61,7 +61,18 @@
     </div>
 </div>
 
-
+<div class="form-group"><label class="col-sm-3 control-label">Dimensiones (para descartables)</label>
+    <div class="col-sm-9 controls">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-icon right">
+                    <i class="fa fa-pencil"></i>
+                    {!! Form::number('tamaño', null, ['class' => 'form-control', 'placeholder'=>'campo no obligatrio']) !!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="form-group"><label class="col-sm-3 control-label">Alto</label>
     <div class="col-sm-9 controls">

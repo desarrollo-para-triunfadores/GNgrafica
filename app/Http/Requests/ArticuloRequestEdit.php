@@ -6,6 +6,10 @@ use App\Http\Requests\Request;
 
 class ArticuloRequestEdit extends Request
 {
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -13,7 +17,7 @@ class ArticuloRequestEdit extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +28,16 @@ class ArticuloRequestEdit extends Request
     public function rules()
     {
         return [
-            //
+            'proveedor_id' => 'required|max:50',
+            'tipo_id' => 'required',
+            'talle_id'=> 'max:11',
+            'material_id'=> 'max:8',
+            'tamaño',
+            'ancho',
+            'alto',
+            'stock',
+            'stockMin',
+            'descripcion'
         ];
     }
 }

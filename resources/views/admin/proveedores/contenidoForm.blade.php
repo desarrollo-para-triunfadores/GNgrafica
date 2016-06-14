@@ -19,7 +19,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-barcode"></i>
-                                            {!! Form::number('cuit', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!}
+                                            {!! Form::text('cuit', null, ['class' => 'form-control', 'placeholder' => 'campo requerido', 'required']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-icon right">
                                             <i class="fa fa-map-marker"></i>
-                                             {!! Form::text('calle', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}     //falta required a calle? (por la factura) Averiguar
+                                             {!! Form::text('calle', null, ['class' => 'form-control', 'placeholder' => 'campo opcional']) !!}
                                         </div>                            
                                     </div>
                                 </div>

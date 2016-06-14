@@ -25,6 +25,7 @@ class ArticuloRequestCreate extends Request
             'tipo_id' => 'required',
             'talle_id'=> 'max:11',
             'material_id'=> 'max:8',
+            'tamaño',
             'ancho',
             'alto',
             'stock',

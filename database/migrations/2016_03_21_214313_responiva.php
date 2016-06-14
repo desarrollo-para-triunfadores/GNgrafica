@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColoresTable extends Migration
+class ResponIva extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class AddColoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('colores', function (Blueprint $table) {
+        Schema::create('responiva', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
+            $table->double('iva');          // porcentaje de IVA aplicado
+            $table->string('factura');      //tipo factura
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class AddColoresTable extends Migration
      */
     public function down()
     {
-        Schema::drop('colores');
+        Schema::drop('responiva');
     }
 }

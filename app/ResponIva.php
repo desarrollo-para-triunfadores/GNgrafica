@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ResponIva extends Model
 {
-    protected $table = "responIva";
+    protected $table = "responiva";
 
     protected $fillable = ['nombre','iva','factura','descripcion'];
 

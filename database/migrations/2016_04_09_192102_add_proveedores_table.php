@@ -14,7 +14,7 @@ class AddProveedoresTable extends Migration
     {
         Schema::create('proveedores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('cuit');
+            $table->string('cuit')->unique();
             $table->string('horario_atencion');
             $table->string('imagen');
             $table->string('nombre');
@@ -24,8 +24,8 @@ class AddProveedoresTable extends Migration
             $table->integer('altura');
             $table->string('telefono');
             $table->string('celular');
-            $table->string('email');
-            $table->string('web');
+            $table->string('email')->unique();
+            $table->string('web')->unique();
             $table->integer('rubro_id')->unsigned();
             $table->foreign('rubro_id')->references('id')->on('rubros')->onDelete('cascade');
 

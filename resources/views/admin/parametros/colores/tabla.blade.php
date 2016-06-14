@@ -20,7 +20,7 @@
                 <div class="btn-group" role="group" aria-label="...">
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.talles.index') }}" title="Visualizar los talles para indumentaria"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Talles</a>
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.tipoArticulos.index') }}" title="Visualizar tipos de articulos"  class="btn btn-info"> <span class="fa fa-cubes" aria-hidden="true"></span> Tipos de Articulos</a>
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.responiva.index') }}" title="Visualizar tipos de articulos"  class="btn btn-info"> <span class="fa fa-balance-scale" aria-hidden="true"></span>Tipos de Tributos</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.responiva.index') }}" title="Visualizar tipos de responsabilidades tributarias"  class="btn btn-info"> <span class="fa fa-balance-scale" aria-hidden="true"></span>Tipos de Tributos</a>
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.materiales.index') }}" title="Visualizar materiales de productos"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Materiales</a>
                 </div>
                 <button data-placement="bottom" title="Registrar un nuevo color para los productos" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">

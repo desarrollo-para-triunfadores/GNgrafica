@@ -8,7 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddArticulosTable' => $baseDir . '/database/migrations/2016_04_11_235715_add_articulos_table.php',
     'AddClientesTable' => $baseDir . '/database/migrations/2016_04_09_185526_add_clientes_table.php',
-    'AddColoresTable' => $baseDir . '/database/migrations/2016_03_05_143430_add_colores_table.php',
+    'AddColoresTable' => $baseDir . '/database/migrations/2015_03_05_143430_add_colores_table.php',
     'AddLocalidadesTable' => $baseDir . '/database/migrations/2016_04_09_183830_add_localidades_table.php',
     'AddMaterialesTable' => $baseDir . '/database/migrations/2016_04_10_231434_add_materiales_table.php',
     'AddPaisesTable' => $baseDir . '/database/migrations/2016_04_09_182805_add_paises_table.php',
@@ -494,7 +494,7 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
-    'ResponIva' => $baseDir . '/database/migrations/2016_05_21_214313_responiva.php',
+    'ResponIva' => $baseDir . '/database/migrations/2016_03_21_214313_responiva.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
