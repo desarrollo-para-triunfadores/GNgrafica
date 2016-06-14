@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Detalle del País
+    Detalle del rubro de proveedor
 @endsection
 
 @section('sidebar')
@@ -9,16 +9,16 @@
 @endsection
 
 @section('content')
-    @include('admin.tipos.editar')
-    @include('admin.tipos.confirmar')
+    @include('admin.rubros.editar')
+    @include('admin.rubros.confirmar')
     <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
         <div class="page-header pull-left">
             <div class="page-title">
-              Tipo de Producto: {{ $tipo->nombreTipo }}</div>
+              Rubro: {{ $rubro->nombre }}</div>
         </div>        
         <div class="page-header pull-right">
             <div class="page-toolbar">         
-                <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.tipoproducto.index') }}" title="Volver a los Registros de tipos de productos"  class="btn btn-blue"> <span class="fa fa-arrow-circle-o-left" aria-hidden="true"></span> Volver</a>                                         
+                <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.rubros.index') }}" title="Volver a los Registros de Rubros de Empresa."  class="btn btn-blue"> <span class="fa fa-arrow-circle-o-left" aria-hidden="true"></span> Volver</a>                                         
             </div>
         </div>
         <div class="clearfix"></div>
@@ -38,7 +38,7 @@
                         <div class="col-md-12">
                             <div class="panel">                               
                                 <div class="panel-body">                                                                                
-                                    <h3>Detalles del Registro</h3>
+                                    <h3>Detalles del registro</h3>
                                     <br>
                                     @include('admin.partes.msjError')
                                     @include('flash::message') 
@@ -51,16 +51,16 @@
                                                         <tbody> 
                                                             <tr>
                                                                 <td><h4 class="box-heading">Nombre:</h4></td>
-                                                                <td><h4>{{ $tipo->nombreTipo }}</h4></td>
+                                                                <td><h4>{{ $rubro->nombre }}</h4></td>
                                                             </tr> 
                                                             <tr>
-                                                                <td><h4 class="box-heading">Fecha de Alta:</h4></td>
-                                                                <td><h4>{{ $tipo->created_at->diffForHumans() }}</h4></td>
+                                                                <td><h4 class="box-heading">Fecha de alta:</h4></td>
+                                                                <td><h4>{{ $rubro->created_at->diffForHumans() }}</h4></td>
                                                             </tr> 
                                                             <tr>
-                                                                <td><h4 class="box-heading">Cantidad de provincias asociadas:</h4></td>
-                                                                <td><h4>{{ $tipo->productos->count() }}</h4></td>
-                                                            </tr>                                   
+                                                                <td><h4 class="box-heading">Cantidad de proveedores asociados:</h4></td>
+                                                                <td><h4>{{ $rubro->proveedores->count() }}</h4></td>
+                                                            </tr>                                     
                                                         </tbody>
                                                     </table> 
                                                 </div> 
@@ -74,7 +74,7 @@
                                             <br>   
                                             <div class="pull-right"> 
                                                 <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar Datos</i></button>                                                                          
-                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-confirmar"  title="Confirmar eliminación de datos." class="btn btn-danger">Eliminar Registro</i></button>
+                                                <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-confirmar"  title="Confirmar eliminación de datos." class="btn btn-danger">Eliminar registro</i></button>
                                             </div>    
                                         </div>                            
                                     </div>  
@@ -91,6 +91,7 @@
 
 @section('script') 
     <script>
-        var listSidebar = "li6";
+        var listSidebar = "li3";
+        var elemFaltante = "nada";
     </script>
 @endsection

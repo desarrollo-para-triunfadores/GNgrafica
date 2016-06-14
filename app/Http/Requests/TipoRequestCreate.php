@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class TalleCreateRequest extends Request
+class TipoRequestCreate extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class TalleCreateRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class TalleCreateRequest extends Request
     public function rules()
     {
         return [
-            //
+            'nombre' => 'required|max:100|unique:tipos',
+            'descripcion'
         ];
     }
 }

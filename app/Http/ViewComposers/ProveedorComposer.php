@@ -16,12 +16,9 @@ class ProveedorComposer {
     {
         $proveedoreslista = Proveedor::orderBy('nombre','ASC')->lists('nombre','nombre');
         $localidades = Localidad::orderBy('nombre','ASC')->lists('nombre','id');
-        $rubros = Rubro::orderBy('nombre','ASC')->lists('nombre','id');    
-
+        $rubros = Rubro::orderBy('nombre','ASC')->lists('nombre','id');
         $view->with('rubros', json_decode($rubros, true))
              ->with('proveedoreslista', json_decode($proveedoreslista, true))
              ->with('localidades', json_decode($localidades, true));
-
     }
-
 }

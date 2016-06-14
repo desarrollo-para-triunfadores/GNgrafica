@@ -10,13 +10,15 @@ class ArticuloVenta extends Model
 
     protected $fillable = ['cantidad', 'importe', 'precio_unitario', 'articulo_id', 'venta_id'];
 
-    public function articulo()   
+    public function articulo()
     {
         return $this->belongsTo('App\Articulo');
     }
 
-    public function venta()   
+    public function venta()
     {
         return $this->belongsTo('App\Venta');
     }
+
+
 }

@@ -34,7 +34,6 @@ class Proveedor extends Model
     }
 
 
-
     /***************** Metodos sacados de Empresa (LaAutentica) **************/
     public function scopeSearchNombres($query, $name)
     {

@@ -71,14 +71,22 @@
                         </a>
                     </li>
                     <li id="li9">
-                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los registros de pedidos" href="{{ route('admin.cajas.registrosCajas') }}">
+                        <a data-toggle="tooltip" data-placement="right" title="Ir a los registros de nuestros clientes" href="{{ route('admin.clientes.index') }}">
+                            <i class="fa fa-child">
+                                <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Clientes</span>
+                        </a>
+                    </li>
+                    <li id="li10">
+                        <a data-toggle="tooltip" data-placement="right" title="Visualizar los registros de pedidos" href="{{ route('admin.pedidos.index') }}">
                             <i class="fa fa-pencil-square-o">
                                 <div class="icon-bg bg-orange"></div>
                             </i>
                             <span class="menu-title">Pedidos</span>
                         </a>
                     </li>
-                    <li id="li10">
+                    <li id="li11">
                         <a data-toggle="tooltip" data-placement="right" title="Visualizar los registros de ventas" href="{{ route('admin.cajas.index') }}">
                             <i class="fa fa-archive">
                                 <div class="icon-bg bg-orange"></div>
@@ -86,6 +94,10 @@
                             <span class="menu-title">Historial de ventas</span>
                         </a>
                     </li>
+
+
+
+
 
                 </ul>
             </div>

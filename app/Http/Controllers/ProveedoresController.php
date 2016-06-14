@@ -28,10 +28,10 @@ class ProveedoresController extends Controller
     {
         $this->proveedor = Proveedor::find($route->getParameter('proveedores'));  // proveedores es el atributo que figura junto al nombre de la ruta en el archivo de rutas.
     }
-    
+
 
     public function index(Request $request) /*index similar a Empresa en LaAutentica*/
-    {     
+    {
         $proveedores = Proveedor::searchNombres($request->nombre)
         ->searchOrigen($request->idorigen)
         ->searchRubro($request->idrubro)
@@ -40,7 +40,7 @@ class ProveedoresController extends Controller
         if($request->ajax()){ 	//Si la solicitud fue realizada utilizando ajax se devuelven los registros únicamente a la tabla.
             return response()->json(view('admin.proveedores.tablaLogos',compact('proveedores'))->render());
         }
-        return view('admin.proveedores.index')->with('proveedores',$proveedores);        
+        return view('admin.proveedores.index')->with('proveedores',$proveedores);
     }
 
 
@@ -54,10 +54,11 @@ class ProveedoresController extends Controller
 
         if ($request->file('imagen'))
         {
-            $file = $request->file('imagen');        
+            $file = $request->file('imagen');
             $nombreImagen = 'GN_' . time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('proveedores')->put($nombreImagen, \File::get($file));
         }
+
         $proveedor->imagen = $nombreImagen;
         $proveedor->save();
         /*
@@ -66,7 +67,7 @@ class ProveedoresController extends Controller
         $imagen->proveedor()->associate($proveedor);
         $imagen->save();
         */
-        Flash::success('El proveedor "'. $proveedor->nombre.'"" ha sido registrado de forma exitosa.');
+        Flash::success('El proveedor "'. $proveedor->nombre.'" ha sido registrado de forma exitosa.');
         return redirect()->route('admin.proveedores.index');
     }
 
@@ -93,7 +94,7 @@ class ProveedoresController extends Controller
         if ($request->file('imagen'))
         {
             $file = $request->file('imagen');
-            $nombreImagen = 'GN_' . time() . '.' . $file->getClientOriginalExtension();            
+            $nombreImagen = 'GN_' . time() . '.' . $file->getClientOriginalExtension();
             if (Storage::disk('proveedores')->exists($proveedor->imagen))
              {
                 Storage::disk('proveedores')->delete($proveedor->imagen);   // Borramos la imagen anterior.
@@ -104,7 +105,7 @@ class ProveedoresController extends Controller
             $proveedor->save();
             Flash::success("Se ha realizado la actualización del proveedor: ".$proveedor->name.".");
             return redirect()->route('admin.proveedores.show', $id);
-        }  
+        }
 
         $proveedor->fill($request->all());
         $proveedor->save();
@@ -118,8 +119,8 @@ class ProveedoresController extends Controller
     {
     	$proveedor = Proveedor::find($id);
         Storage::disk('proveedores')->delete($proveedor->imagen); // Borramos la imagen asociada.
-        $proveedor->delete();        
-        Flash::error("Se ha realizado la eliminación del registro: ".$proveedor->nombre.".");        
+        $proveedor->delete();
+        Flash::error("Se ha realizado la eliminación del registro: ".$proveedor->nombre.".");
         return redirect()->route('admin.proveedores.index');
     }
 

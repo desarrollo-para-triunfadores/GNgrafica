@@ -5,12 +5,12 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Actualizar Registro: {{ $tipo->nombreTipo  }}</h4>
+                    Actualizar registro: {{ $rubro->nombre }}</h4>
             </div>
             <div class="modal-body">   
                 @include('admin.partes.listaErrores')                                    
-{!! Form::model($tipo, ['route' => ['admin.tipoproducto.update', $tipo], 'method' => 'PUT', 'id' =>'form-actualizar', 'class' => 'form-horizontal']) !!}
-                    @include('admin.tipos.contenidoForm')                                                     
+{!! Form::model($rubro,['route' => ['admin.rubros.update', $rubro], 'method' => 'PUT', 'id' =>'form-actualizar', 'class' => 'form-horizontal']) !!}
+                    @include('admin.rubros.contenidoForm')                                                      
                     {!! Form::submit('Actualizar Registro', ['class' => 'btn btn-warning btn-block']) !!}  
                     <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
                     Cerrar</button>                        

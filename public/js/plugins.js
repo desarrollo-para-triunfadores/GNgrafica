@@ -1,10 +1,10 @@
-function constructorSelect() {
+function constructorSelect(){
     $('.selectBoot').selectpicker({
 		style: 'btn-white'
     });
 }
 
-function constructorTabla() {
+function constructorTabla(){
     $('.dataTable').DataTable({
         responsive: true,
         "language": {

@@ -16,15 +16,20 @@ class AddClientesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellido');
+            $table->integer('responIva_id')->unsigned();
+            $table->foreign('responIva_id')->references('id')->on('responIva')->onDelete('cascade');
             $table->string('empresa');
+            $table->string('descripcion');
             $table->string('cuit');
             $table->string('dni');
             $table->string('telefono');
             $table->string('email');
-            $table->integer('localidad_id')->unsigned();            
             $table->string('direccion');
-
+            $table->integer('localidad_id')->unsigned();
             $table->foreign('localidad_id')->references('id')->on('localidades')->onDelete('cascade');
+
+
+
             $table->timestamps();
         });
     }

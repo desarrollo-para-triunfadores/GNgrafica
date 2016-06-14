@@ -16,7 +16,7 @@ class PaisesController extends Controller
 {
     public function __construct()
     {
-        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel       
+        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
     }
 
     /**
@@ -34,11 +34,7 @@ class PaisesController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('admin.paises.create');
@@ -65,7 +61,7 @@ class PaisesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {       
+    {
         $pais = Pais::find($id);
         return view('admin.paises.show')->with('pais',$pais);
     }
@@ -88,8 +84,8 @@ class PaisesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(PaisRequestEdit $request, $id)
-    {      
-        $pais = Pais::find($id); 
+    {
+        $pais = Pais::find($id);
         $pais->fill($request->all());
         $pais->save();
         Flash::success("Se ha realizado la actualización del registro: ".$pais->nombre.".");
@@ -103,9 +99,9 @@ class PaisesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {   
-        $pais = Pais::find($id);    
-        $pais->delete();        
+    {
+        $pais = Pais::find($id);
+        $pais->delete();
         Flash::error("Se ha realizado la eliminación del registro: ".$pais->nombre.".");
         return redirect()->route('admin.paises.index');
     }

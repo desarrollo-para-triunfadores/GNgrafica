@@ -1,6 +1,7 @@
-$(document).ready(function () {  
+$(document).ready(function () {
     constructorTabla();
-    constructorSelect();    
+    constructorTabla2();
+    constructorSelect();
     verificarVacio();
     $("#"+listSidebar).addClass("active");
     $('#form-crear').parsley();
@@ -9,20 +10,20 @@ $(document).ready(function () {
 });
 
 function cambiarVista(vista)
-{	
+{
 	if (vista == 2)
-	{	
-		$('#tab-lista').removeClass("hide"); 
+	{
+		$('#tab-lista').removeClass("hide");
 		$('#tab-logos').addClass("hide");
 		$('#bot-mostrar').addClass("hide");
 		$('#busqueda').addClass("hide");
      	$('#bot-buscar').html(" Mostrar Filtros");
 	}
-	else 
+	else
 	{
      	$('#tab-logos').removeClass("hide");
      	$('#bot-mostrar').removeClass("hide");
-		$('#tab-lista').addClass("hide");		
+		$('#tab-lista').addClass("hide");
 	}
 }
 
@@ -43,7 +44,7 @@ function verificarVacio() // este metodo lanza el modal para crear un registro p
         if (listSidebar !== 'li6'){
             $('.elementoFaltante').html(elemFaltante);
             $('#botonmodal').html('<i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar '+elemFaltante);
-        }     
+        }
         $('#botonmodal').click();
-    }   
+    }
 }

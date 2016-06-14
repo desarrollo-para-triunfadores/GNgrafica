@@ -3,25 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Articulo extends Model implements SluggableInterface
+
+class Articulo extends Model
 {
-
-    use SluggableTrait;
-
-    protected $sluggable = [
-        'build_from' => 'nombre',
-        'save_to'    => 'slug',
-    ];
 
 
 	protected $table =  "articulos";
 
-    protected $fillable = ['nombre', 'proveedor_id', 'tipo_id', 'material_id','color','alto','ancho','talle_id', 'stockMin', 'descripcion'];
+    protected $fillable = ['nombre', 'proveedor_id', 'material_id', 'tipo_id','color','alto','ancho','talle_id', 'stockMinimo', 'stock', 'descripcion', 'estado'];
 
-    public function proveedor()   
+    public function proveedor()
     {
         return $this->belongsTo('App\Proveedor');
     }
@@ -46,6 +38,19 @@ class Articulo extends Model implements SluggableInterface
         return $this->hasMany('App\ArticuloVenta');
     }
 
+		public function stockSuficiente($cantidadSolicitada)
+    {
+        $existencia = false;
+        if ($this->stock >= $cantidadSolicitada) {
+					$existencia = true;
+				}
+        return $existencia;
+    }
+
+		public function descontarStock($cant)
+		{
+			$this->stock = $this->stock - $cant;
+		}
 
 /******************************************************************************************************/
     public function scopeSearchNombres($query, $nombre)
@@ -102,5 +107,5 @@ class Articulo extends Model implements SluggableInterface
             return $query->where('talle_id', 'LIKE', $idtalle);
         }
     }
-   
+
 }

@@ -21,15 +21,13 @@ class ComposerServiceProvider extends ServiceProvider
 
             'App\Http\ViewComposers\ArticuloComposer' => ['admin.articulos.contenidoForm', 'admin.articulos.cabeceraTabla', 'front.articulos.cabeceraTabla'],
             'App\Http\ViewComposers\ProveedorComposer' => ['admin.proveedores.contenidoForm', 'admin.proveedores.cabeceraTabla'],
-
-        ]);   
+            'App\Http\ViewComposers\ClienteComposer' => ['admin.clientes.contenidoForm', 'admin.clientes.cabeceraTabla'],
+            'App\Http\ViewComposers\ClientesComposer' => ['admin.pedidos.show2'],
+            'App\Http\ViewComposers\ArticulosComposer' => ['admin.articuloVenta.contenidoForm'],
+        ]);
     }
 
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
+
     public function register()
     {
         //

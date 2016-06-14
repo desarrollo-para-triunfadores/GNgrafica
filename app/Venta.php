@@ -10,7 +10,7 @@ class Venta extends Model
 
     protected $fillable = ['fecha_pedido', 'hora_pedido', 'fecha_venta', 'hora_venta', 'pagado', 'entregado', 'senado'];
 
-    public function cliente()   
+    public function cliente()
     {
         return $this->belongsTo('App\Cliente');
     }
@@ -21,7 +21,26 @@ class Venta extends Model
     }
 
     public function movimientos()
-	{
+	  {
     	 return $this->hasMany('App\Movimiento');
-	} 
+    }
+
+    public function importe()
+	  {
+      $total = 0;
+      foreach ($this->articulos_ventas as $av) {
+          $total = $total + $av->importe;
+      }
+       return $total;
+    }
+
+    public function scopeSearchPedidos($query)
+    {
+      $query->where('pagado', 'LIKE', 0)
+              ->orWhere(function($query)
+              {
+                  $query->where('entregado', 'LIKE', 0);
+              })
+              ->get();
+    }
 }
