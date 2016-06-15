@@ -55,6 +55,7 @@ class PedidosController extends Controller
     * Primero se recoge en una variable el array de renglones y se crea y se persiste el
     * registro de pedido/venta.
     */
+        ////COMENTARIO DE RELLENO
          $arrayRenglones = $request->renglones;
          $fecha =  \Carbon\Carbon::now('America/Buenos_Aires');
          $venta = new Venta();
