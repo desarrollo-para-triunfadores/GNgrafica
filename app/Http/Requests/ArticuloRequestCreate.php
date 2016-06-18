@@ -25,6 +25,7 @@ class ArticuloRequestCreate extends Request
             'tipo_id' => 'required',
             'talle_id'=> 'required',
             'material_id'=> 'required'
+
         ];
     }
 }

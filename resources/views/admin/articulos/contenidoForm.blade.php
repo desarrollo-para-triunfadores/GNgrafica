@@ -30,7 +30,7 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-pencil"></i>
-                    {!! Form::select('talle_id', $talles, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true', 'required']) !!}
+                    {!! Form::select('talle_id', $talles, null, ['class' => 'form-control selectBoot', 'data-live-search' => 'true' , 'placeholder' => 'Si está registrando ropa, seleccione el talle..']) !!}
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-paint-brush"></i>
-                    {!!Form::select('color', ['Rojo','Celeste','Azul Marino','Azul','Verde','Blanco','Negro'], null, ['placeholder' => 'Escoja el color.. (campo no obligatorio)','class' => 'form-control']) !!}
+                    {!!Form::select('color_id', $colores, null, ['placeholder' => 'Escoja el color.. (campo no obligatorio)','class' => 'form-control']) !!}
                 </div>
             </div>
         </div>

@@ -60,7 +60,7 @@
                                             <tr>
                                                 <td>{{ $articulo->nombre }}</td>
                                                 <td>{{ $articulo->talle->nombre}}</td>
-                                                <td>{{ $articulo->color }}</td>
+                                                <td>{{ $articulo->color->nombre }}</td>
                                                 <td>{{ $articulo->material->nombre }}</td>
                                                 <td>{{ $articulo->tipo->nombre }}</td>
                                                 <td>{{ $articulo->stock }}</td>

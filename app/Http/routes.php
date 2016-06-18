@@ -19,6 +19,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {
    Route::resource('talles','TallesController');
    Route::resource('articulos','ArticulosController');
    Route::resource('articulosVentas','ArticulosVentasController');
+   Route::resource('colores','ColoresController');
+   Route::resource('responiva','ResponivaController');
+
+
+
 
    Route::resource('proveedores','ProveedoresController');
    Route::resource('configuraciones','ConfigController');

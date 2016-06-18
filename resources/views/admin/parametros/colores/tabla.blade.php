@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Talles Registrados para los articulos
+    Colores Registrados para los articulos
 @endsection
 
 @section('sidebar')
@@ -9,22 +9,22 @@
 @endsection
 
 @section('content')
-    @include('admin.parametros.talles.create')
+    @include('admin.parametros.colores.create')
     <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
         <div class="page-header pull-left">
             <div class="page-title">
-                Talles</div>
+                Colores</div>
         </div>
         <div class="page-header pull-right">
             <div class="page-toolbar">
                 <div class="btn-group" role="group" aria-label="...">
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.materiales.index') }}" title="Visualizar los materiales"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Materiales</a>
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.tipoArticulos.index') }}" title="Visualizar tipos de articulos para la produccion"  class="btn btn-info"> <span class="fa fa-cubes" aria-hidden="true"></span> Tipos de Articulos</a>
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.responiva.index') }}" title="Visualizar los tributos para clientes"  class="btn btn-info"> <span class="fa fa-balance-scale" aria-hidden="true"></span> Tipos de Tributos</a>
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.colores.index') }}" title="Visualizar materiales de productos"  class="btn btn-info"> <span class="fa fa-paint-brush" aria-hidden="true"></span> Colores</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.talles.index') }}" title="Visualizar los talles para indumentaria"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Talles</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.tipoArticulos.index') }}" title="Visualizar tipos de articulos"  class="btn btn-info"> <span class="fa fa-cubes" aria-hidden="true"></span> Tipos de Articulos</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.responiva.index') }}" title="Visualizar tipos de responsabilidades tributarias"  class="btn btn-info"> <span class="fa fa-balance-scale" aria-hidden="true"></span>Tipos de Tributos</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.materiales.index') }}" title="Visualizar materiales de productos"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Materiales</a>
                 </div>
-                <button data-placement="bottom" title="Registrar un nuevo talle" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Talle
+                <button data-placement="bottom" title="Registrar un nuevo color para los productos" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Color
                 </button>
             </div>
         </div>
@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-yellow">
-                                <div class="panel-heading">Talles Registrados</div>
+                                <div class="panel-heading">Colores Registrados</div>
                                 <div class="panel-body">
                                     @include('admin.partes.msjError')
                                     @include('flash::message')
@@ -51,17 +51,16 @@
                                         <thead>
                                         <tr>
                                             <th>Nombre</th>
-                                            <th>Descripcion</th>
+
                                             <th class="text-center">Acciones</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($talles as $talle)
+                                        @foreach($colores as $color)
                                             <tr>
-                                                <td>{{ $talle->nombre }}</td>
-                                                <td>{{ $talle->descripcion }}</td>
+                                                <td>  {{ $color->nombre }}</td>
                                                 <td class="text-center">
-                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podr� acceder acciones como edici�n y eliminaci�n del mismo" href="{{ route('admin.talles.show', $talle->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
+                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podr&aacute acceder acciones como edici&oacuten y eliminaci&oacuten del mismo" href="{{ route('admin.colores.show', $color->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -11,7 +11,7 @@ class Articulo extends Model
 
 	protected $table =  "articulos";
 
-    protected $fillable = ['nombre', 'proveedor_id', 'material_id', 'tipo_id','color','alto','ancho','talle_id', 'stockMinimo', 'stock', 'descripcion', 'estado'];
+    protected $fillable = ['nombre', 'proveedor_id', 'material_id', 'tipo_id','color_id','alto','ancho','talle_id', 'stockMinimo', 'stock', 'descripcion', 'estado'];
 
     public function proveedor()
     {
@@ -31,6 +31,16 @@ class Articulo extends Model
     public function talle()
     {
         return $this->belongsTo('App\Talle');
+    }
+
+    public function color()
+    {
+        return $this->belongsTo('App\Color');
+    }
+
+    public function responiva()
+    {
+        return $this->belongsTo('App\ResponIva');
     }
 
     public function articulos_venta()

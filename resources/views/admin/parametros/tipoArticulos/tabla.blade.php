@@ -20,8 +20,10 @@
                 <div class="btn-group" role="group" aria-label="...">
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.talles.index') }}" title="Visualizar los talles para indumentaria"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Talles</a>
                     <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.materiales.index') }}" title="Visualizar materiales de articulos"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Materiales</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.responiva.index') }}" title="Visualizar tipos de responsabilidades tributarias"  class="btn btn-info"> <span class="fa fa-balance-scale" aria-hidden="true"></span>Tipos de Tributos</a>
+                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.colores.index') }}" title="Visualizar materiales de productos"  class="btn btn-info"> <span class="fa fa-paint-brush" aria-hidden="true"></span> Colores</a>
                 </div>
-                <button data-placement="bottom" title="Registrar un nuevo material" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
+                <button data-placement="bottom" title="Registrar un nuevo tipo de articulo para la producciÃ³" type="button" data-hover="tooltip" data-toggle="modal" data-target="#modal-config"  class="btn btn-blue">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Tipo de Articulo
                 </button>
             </div>
@@ -59,7 +61,7 @@
                                                 <td>  {{ $tipo->nombre }}</td>
                                                 <td>  {{ $tipo->descripcion }}</td>
                                                 <td class="text-center">
-                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrá acceder acciones como edición y eliminación del mismo" href="{{ route('admin.tipoArticulos.show', $tipo->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
+                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar registro. Al visualizar este registro podrÃ¡ acceder acciones como ediciÃ³n y eliminaciÃ³n del mismo" href="{{ route('admin.tipoArticulos.show', $tipo->id) }}" class="btn btn-info"> <span class="fa fa-eye" aria-hidden="true"></span></a>
                                                 </td>
                                             </tr>
                                         @endforeach
