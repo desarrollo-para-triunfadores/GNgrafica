@@ -5,24 +5,24 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Eliminar el Color para articulos: {{ $color->nombre }}</h4>
+                    Eliminar registro: {{ $color->nombre }}</h4>
             </div>
                 @if ($color->articulos->count()!=0)
-                    @include('admin.partes.msjRegAsociados')   
+                    @include('admin.partes.msjRegAsociados')
                 @else
                     <div class="modal-body">
                         {!! Form::open(['route' => ['admin.colores.destroy', $color], 'method' => 'DELETE']) !!}
                         @include('admin.partes.msjConfirmar')
                         <hr>
-                        <div class="pull-right">                                              
-                            <button type="button" data-dismiss="modal" class="btn btn-white"> Cerrar</button>                                                              
-                            {!! Form::submit('Eliminar registro', ['class' => 'btn btn-danger ']) !!}  
-                        </div>  
+                        <div class="pull-right">
+                            <button type="button" data-dismiss="modal" class="btn btn-white"> Cerrar</button>
+                            {!! Form::submit('Eliminar registro', ['class' => 'btn btn-danger ']) !!}
+                        </div>
                         <br>
-                        {!! Form::close() !!}  
+                        {!! Form::close() !!}
                         <br>
-                    </div>                     
-                @endif                                  
+                    </div>
+                @endif
         </div>
     </div>
 </div>

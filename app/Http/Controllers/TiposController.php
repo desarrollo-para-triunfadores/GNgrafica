@@ -16,7 +16,7 @@ class TiposController extends Controller
 
     public function __construct()
     {
-        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
+        Carbon::setlocale('es'); // Instancio en Espaï¿½ol el manejador de fechas de Laravel
     }
 
     public function find (Route $route)
@@ -56,12 +56,12 @@ class TiposController extends Controller
         return view('admin.parametros.tipoArticulos.show')->with('tipo',$tipo);
     }
 
-    public function update(TipoRequestEdit $request, $id)
+    public function update(Request $request, $id)
     {
-        $tipo = Talle::find($id);
+        $tipo = Tipo::find($id);
         $tipo->fill($request->all());
         $tipo->save();
-        Flash::success("Se ha realizado la actualización del registro: ".$tipo->nombre.".");
+        Flash::success("Se ha realizado la actualizaciÃ³n del registro: ".$tipo->nombre.".");
         return redirect()->route('admin.tipoArticulos.show', $id);
     }
 

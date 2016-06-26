@@ -14,7 +14,8 @@ class AddColoresTable extends Migration
     {
         Schema::create('colores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre')->unique();
+            $table->string('nombre');
+            $table->string('codigo');
             $table->timestamps();
         });
     }

@@ -285,3 +285,20 @@ function enviarPedido(entregado)
         }
     });
 }
+
+
+
+$( "#botonModalidad" ).click(function() {
+ if ($('#divSena').hasClass('hide')){
+      $('#botonModalidad').html("Pagar totalidad del pedido");
+      $('#botonModalidad').removeClass("btn-primary");
+        $('#botonModalidad').addClass("btn-success");
+      $('#divSena').removeClass("hide");
+    }else{
+      $('#divSena').addClass("hide");
+        $('#divSena').val(montoPedido);
+        $('#botonModalidad').removeClass("btn-success");
+          $('#botonModalidad').addClass("btn-primary");
+      $('#botonModalidad').html("Señar el pedido");
+    }
+});

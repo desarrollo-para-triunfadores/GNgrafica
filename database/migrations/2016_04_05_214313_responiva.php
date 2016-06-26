@@ -12,12 +12,11 @@ class ResponIva extends Migration
      */
     public function up()
     {
-        Schema::create('responIva', function (Blueprint $table) {
+        Schema::create('responiva', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->double('iva');          // porcentaje de IVA aplicado
             $table->string('factura');      //tipo factura
-            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class ResponIva extends Migration
      */
     public function down()
     {
-        Schema::drop('responIva');
+        Schema::drop('responiva');
     }
 }

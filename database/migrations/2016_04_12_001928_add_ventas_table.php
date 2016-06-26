@@ -21,6 +21,8 @@ class AddVentasTable extends Migration
             $table->boolean('pagado');
             $table->boolean('entregado');
             $table->double('senado');
+            $table->integer('cliente_id')->unsigned();
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
             $table->timestamps();
         });
     }

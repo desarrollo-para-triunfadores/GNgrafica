@@ -15,10 +15,10 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" data-dismiss="modal" class="btn btn-white"> Cerrar</button>
-          <button type="button" data-dismiss="modal" class="btn btn btn-success" onclick="enviarPedido(true, false);"> Registrar como pedido</button>
-          <button type="button" data-dismiss="modal" class="btn btn btn-info" onclick="enviarPedido(true, true);"> Registrar como venta</button>
-</div>
+            <button type="button" data-dismiss="modal" class="btn btn-white"> Cerrar</button>
+            <button type="button" data-dismiss="modal" class="btn btn btn-success" onclick="enviarPedido(true, false);"> Registrar como pedido</button>
+            <button type="button" data-dismiss="modal" class="btn btn btn-info" onclick="enviarPedido(true, true);"> Registrar como venta</button>
+        </div>
           </div>
     </div>
 </div>

@@ -5,17 +5,15 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Editar Tipo</h4>
+                    Editar tipo de artículo</h4>
             </div>
             <div class="modal-body">
                 @if ($errors->any())
                     @include('admin.partes.listaErrores')
-                @else
-                    @include('admin.partes.msgLogoActualizar')
                 @endif
                 {!! Form::model($tipo, ['route' => ['admin.tipoArticulos.update', $tipo], 'id' =>'form-actualizar', 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true]) !!}
-                @include('admin.parametros.tipoArticulos.contenidoForm')
-                {!! Form::submit('Actualizar Registro', ['class' => 'btn btn-warning btn-block']) !!}
+                    @include('admin.parametros.tipoArticulos.contenidoForm')                
+                {!! Form::submit('Actualizar registro', ['class' => 'btn btn-warning btn-block']) !!}
                 <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
                     Cerrar</button>
                 {!! Form::close() !!}

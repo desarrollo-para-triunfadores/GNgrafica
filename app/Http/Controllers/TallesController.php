@@ -15,7 +15,7 @@ class TallesController extends Controller
 {
     public function __construct()
     {
-        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
+        Carbon::setlocale('es'); // Instancio en Espaï¿½ol el manejador de fechas de Laravel
     }
 
     public function find (Route $route)
@@ -34,11 +34,11 @@ class TallesController extends Controller
         return view('admin.parametros.talles.create');
     }
 
-    public function store(TalleRequestCreate $request)
+    public function store(Request $request)
     {
         $talle = new Talle($request->all());
         $talle->save();
-        Flash::success('El talle "'. $talle->nombre.'" ha sido registrado de forma existosa.');
+        Flash::success('El talle "'. $talle->talle.'" ha sido registrado de forma existosa.');
         return redirect()->route('admin.talles.index');
     }
 
@@ -49,12 +49,12 @@ class TallesController extends Controller
         return view('admin.parametros.talles.show')->with('talle',$talle);
     }
 
-    public function update(TalleRequestEdit $request, $id)
-    {
+    public function update(Request $request, $id)
+    {      
         $talle = Talle::find($id);
         $talle->fill($request->all());
         $talle->save();
-        Flash::success("Se ha realizado la actualización del registro: ".$talle->nombre.".");
+        Flash::success("Se ha realizado la actualizaciÃ³n del registro: ".$talle->nombre.".");
         return redirect()->route('admin.talles.show', $id);
     }
 

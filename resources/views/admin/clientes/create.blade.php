@@ -5,13 +5,13 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Registrar Cliente</h4>
+                    Registrar cliente</h4>
             </div>
             <div class="modal-body">
                 @if ($errors->any())
                     <div class="alert alert-warning alert-dismissable">
                         <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
-                        <strong>¡Atención!</strong>
+                        <strong>Â¡AtenciÃ³n!</strong>
                         <ul>
                             @foreach($errors->all() as $error)
                                 <li>
@@ -23,7 +23,7 @@
                 @endif
                 {!! Form::open(['route' => 'admin.clientes.store', 'method' => 'POST', 'id' =>'form-crear', 'class' => 'form-horizontal']) !!}
                 @include('admin.clientes.contenidoForm')
-                {!! Form::submit('Crear Registro', ['class' => 'btn btn-green btn-block']) !!}
+                {!! Form::submit('Crear registro', ['class' => 'btn btn-green btn-block']) !!}
                 <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
                     Cerrar</button>
                 {!! Form::close() !!}

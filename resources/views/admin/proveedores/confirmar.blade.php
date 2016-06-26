@@ -5,24 +5,24 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Eliminar Empresa Proveedora: {{ $proveedor->nombre }}</h4>
+                    Eliminar registro: {{ $proveedor->nombre }}</h4>
             </div>
                 @if ($proveedor->articulos->count()!=0)
-                    @include('admin.partes.msjRegAsociados')   
+                    @include('admin.partes.msjRegAsociados')
                 @else
                     <div class="modal-body">
                         {!! Form::open(['route' => ['admin.proveedores.destroy', $proveedor], 'method' => 'DELETE']) !!}
                         @include('admin.partes.msjConfirmar')
                         <hr>
-                        <div class="pull-right">                                              
-                            <button type="button" data-dismiss="modal" class="btn btn-white"> Cerrar</button>                                                              
-                            {!! Form::submit('Eliminar registro', ['class' => 'btn btn-danger ']) !!}  
-                        </div>  
+                        <div class="pull-right">
+                            <button type="button" data-dismiss="modal" class="btn btn-white"> Cerrar</button>
+                            {!! Form::submit('Eliminar registro', ['class' => 'btn btn-danger ']) !!}
+                        </div>
                         <br>
-                        {!! Form::close() !!}  
+                        {!! Form::close() !!}
                         <br>
-                    </div>                     
-                @endif                                  
+                    </div>
+                @endif
         </div>
     </div>
 </div>

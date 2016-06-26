@@ -18,7 +18,7 @@ class ColoresController extends Controller
 {
     public function __construct()
     {
-        Carbon::setlocale('es'); // Instancio en Español el manejador de fechas de Laravel
+        Carbon::setlocale('es'); // Instancio en EspaÃ±ol el manejador de fechas de Laravel
     }
 
 
@@ -38,6 +38,7 @@ class ColoresController extends Controller
 
     public function store(Request $request)
     {
+    //  dd($request);
         $color = new Color($request->all());
         $color->save();
 
@@ -61,7 +62,7 @@ class ColoresController extends Controller
         $color->save();
 
         Flash::success("Se ha editado el nombre del color");
-        return redirect()->route('admin..colores.show',$id);
+        return redirect()->route('admin.colores.show',$id);
     }
 
 

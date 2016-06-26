@@ -5,17 +5,15 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Editar Color</h4>
+                    Editar color</h4>
             </div>
             <div class="modal-body">
                 @if ($errors->any())
                     @include('admin.partes.listaErrores')
-                @else
-                    @include('admin.partes.msgLogoActualizar')
                 @endif
-                {!! Form::model($color, ['route' => ['admin.materiales.update', $color], 'id' =>'form-actualizar', 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true]) !!}
+                {!! Form::model($color, ['route' => ['admin.colores.update', $color], 'id' =>'form-actualizar', 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true]) !!}
                 @include('admin.parametros.colores.contenidoForm')
-                {!! Form::submit('Actualizar Registro', ['class' => 'btn btn-warning btn-block']) !!}
+                {!! Form::submit('Actualizar registro', ['class' => 'btn btn-warning btn-block']) !!}
                 <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
                     Cerrar</button>
                 {!! Form::close() !!}

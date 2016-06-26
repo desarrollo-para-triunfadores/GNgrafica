@@ -5,17 +5,15 @@
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
                     &times;</button>
                 <h4 class="modal-title">
-                    Editar Categoria Tributaria</h4>
+                    Editar categoría tributaria</h4>
             </div>
             <div class="modal-body">
                 @if ($errors->any())
                     @include('admin.partes.listaErrores')
-                @else
-                    @include('admin.partes.msgLogoActualizar')
                 @endif
                 {!! Form::model($responiva, ['route' => ['admin.responiva.update', $responiva], 'id' =>'form-actualizar', 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true]) !!}
                 @include('admin.parametros.responiva.contenidoForm')
-                {!! Form::submit('Actualizar Registro', ['class' => 'btn btn-warning btn-block']) !!}
+                {!! Form::submit('Actualizar registro', ['class' => 'btn btn-warning btn-block']) !!}
                 <button type="button" data-dismiss="modal" class="btn btn-white btn-block">
                     Cerrar</button>
                 {!! Form::close() !!}

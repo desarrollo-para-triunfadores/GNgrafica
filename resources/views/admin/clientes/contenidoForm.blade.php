@@ -1,7 +1,6 @@
-<h3>Detalles del registro</h3>
+<h3>Información general</h3>
 <br>
-
-<div class="form-group"><label class="col-sm-3 control-label">Apellido</label>
+<div class="form-group"><label class="col-sm-3 control-label">Apellido/s</label>
     <div class="col-sm-9 controls">
         <div class="row">
             <div class="col-xs-12">
@@ -14,7 +13,7 @@
     </div>
 </div>
 
-<div class="form-group"><label class="col-sm-3 control-label">Nombre</label>
+<div class="form-group"><label class="col-sm-3 control-label">Nombre/s</label>
     <div class="col-sm-9 controls">
         <div class="row">
             <div class="col-xs-12">
@@ -33,7 +32,7 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-pencil"></i>
-                    {!! Form::text('empresa', null, ['class' => 'form-control', 'placeholder' => 'campo no requerido', 'maxlength' => '50']) !!}
+                    {!! Form::text('empresa', null, ['class' => 'form-control', 'placeholder' => 'campo opcional', 'maxlength' => '50']) !!}
                 </div>
             </div>
         </div>
@@ -59,7 +58,7 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-pencil"></i>
-                    {!! Form::text('cuit', null, ['class' => 'form-control', 'placeholder' => 'campo no requerido', 'maxlength' => '50']) !!}
+                    {!! Form::text('cuit', null, ['class' => 'form-control', 'placeholder' => 'campo opcional', 'maxlength' => '50']) !!}
                 </div>
             </div>
         </div>
@@ -72,52 +71,17 @@
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-pencil"></i>
-                    {!! Form::text('dni', null, ['class' => 'form-control', 'placeholder' => 'campo no requerido', 'maxlength' => '8']) !!}
+                    {!! Form::text('dni', null, ['class' => 'form-control', 'placeholder' => 'campo opcional', 'maxlength' => '8']) !!}
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<div class="form-group"><label class="col-sm-3 control-label">Teléfono</label>
-    <div class="col-sm-9 controls">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="input-icon right">
-                    <i class="fa fa-pencil"></i>
-                    {!! Form::text('telefono', null, ['class' => 'form-control', 'placeholder' => 'campo no requerido', 'maxlength' => '50']) !!}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="form-group"><label class="col-sm-3 control-label">Email</label>
-    <div class="col-sm-9 controls">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="input-icon right">
-                    <i class="fa fa-pencil"></i>
-                    {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'campo no requerido', 'maxlength' => '50']) !!}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="form-group"><label class="col-sm-3 control-label">Direccion</label>
-    <div class="col-sm-9 controls">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="input-icon right">
-                    <i class="fa fa-pencil"></i>
-                    {!! Form::text('direccion', null, ['class' => 'form-control', 'placeholder' => 'campo no requerido', 'maxlength' => '50']) !!}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+<br>
+<hr/>
+<br>
+<h3>Dirección</h3>
+<br>
 <div class="form-group"><label class="col-sm-3 control-label">Localidad</label>
     <div class="col-sm-9 controls">
         <div class="row">
@@ -127,14 +91,59 @@
         </div>
     </div>
 </div>
-
-<div class="form-group"><label class="col-sm-3 control-label">Descripcion</label>
+<div class="form-group"><label class="col-sm-3 control-label">Dirección</label>
     <div class="col-sm-9 controls">
         <div class="row">
             <div class="col-xs-12">
                 <div class="input-icon right">
                     <i class="fa fa-pencil"></i>
-                    {!! Form::text('descripcion', null, ['class' => 'form-control', 'placeholder' => 'campo no requerido', 'maxlength' => '50']) !!}
+                    {!! Form::text('direccion', null, ['class' => 'form-control', 'placeholder' => 'campo opcional', 'maxlength' => '50']) !!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<hr/>
+<br>
+<h3>Detalles de contacto</h3>
+<br>
+<div class="form-group"><label class="col-sm-3 control-label">Teléfono</label>
+    <div class="col-sm-9 controls">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-icon right">
+                    <i class="fa fa-pencil"></i>
+                    {!! Form::text('telefono', null, ['class' => 'form-control', 'placeholder' => 'campo opcional', 'maxlength' => '50']) !!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group"><label class="col-sm-3 control-label">Email</label>
+    <div class="col-sm-9 controls">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-icon right">
+                    <i class="fa fa-pencil"></i>
+                    {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'campo opcional', 'maxlength' => '50']) !!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<hr/>
+<br>
+<h3>Descripción</h3>
+<br>
+<div class="form-group">
+    <div class="col-sm-12 controls">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-icon right">
+                    <i class="fa fa-pencil"></i>
+                    {!! Form::textarea('descripcion', null, ['class' => 'form-control', 'placeholder' => 'campo opcional - máx. 500 carácteres']) !!}
                 </div>
             </div>
         </div>

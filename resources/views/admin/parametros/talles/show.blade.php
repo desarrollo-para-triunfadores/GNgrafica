@@ -1,7 +1,7 @@
 @extends('admin.partes.index')
 
 @section('title')
-    Detalles del Talle para articulo
+    Detalles del talle de artículo
 @endsection
 
 @section('sidebar')
@@ -14,15 +14,12 @@
     <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
         <div class="page-header pull-left">
             <div class="page-title">
-                Material: {{ $talle->nombre }}</div>
+                Talle: {{ $talle->talle }}</div>
         </div>
         <div class="page-header pull-right">
             <div class="page-toolbar">
-                <div class="btn-group" role="group" aria-label="...">
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.materiales.index') }}" title="Visualizar los materiales para indumentaria"  class="btn btn-info"> <span class="fa fa-flag" aria-hidden="true"></span> Materiales</a>
-                    <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.tipoArticulos.index') }}" title="Visualizar tipos de articulos"  class="btn btn-info"> <span class="fa fa-map-marker" aria-hidden="true"></span> Tipos</a>
-                </div>
-                <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.talles.index') }}" title="Volver a los Registros de Talles"  class="btn btn-blue"> <span class="fa fa-arrow-circle-o-left" aria-hidden="true"></span> Volver</a>
+                @include('admin.parametros.talles.botonera')
+                <a data-toggle="tooltip" data-placement="bottom" href="{{ route('admin.talles.index') }}" title="Volver a los registros de talles"  class="btn btn-blue"> <span class="fa fa-arrow-circle-o-left" aria-hidden="true"></span> Volver</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -42,7 +39,7 @@
                             <div class="col-md-12">
                                 <div class="panel">
                                     <div class="panel-body">
-                                        <h3>Detalles del Registro</h3>
+                                        <h3>Detalles del registro</h3>
                                         <br>
                                         @include('admin.partes.msjError')
                                         @include('flash::message')
@@ -55,18 +52,18 @@
                                                             <tbody>
                                                             <tr>
                                                                 <td><h4 class="box-heading">Nombre:</h4></td>
-                                                                <td><h4>{{ $talle->nombre }}</h4></td>
+                                                                <td><h4>{{ $talle->talle }}</h4></td>
                                                             </tr>
                                                             <tr>
-                                                                <td><h4 class="box-heading">Descripcion:</h4></td>
-                                                                <td><h4>{{ $talle->descripcion }}</h4></td>
+                                                                <td><h4 class="box-heading">Alto x ancho:</h4></td>
+                                                                <td><h4>{{ $talle->alto }} x {{ $talle->ancho }} cm</h4></td>
                                                             </tr>
                                                             <tr>
-                                                                <td><h4 class="box-heading">Fecha de Alta:</h4></td>
+                                                                <td><h4 class="box-heading">Fecha de alta:</h4></td>
                                                                 <td><h4>{{ $talle->created_at->diffForHumans() }}</h4></td>
                                                             </tr>
                                                             <tr>
-                                                                <td><h4 class="box-heading">Cantidad de articulos que usan este material:</h4></td>
+                                                                <td><h4 class="box-heading">Cantidad de artículos que asociados a este talle:</h4></td>
                                                                 <td><h4>{{ $talle->articulos->count() }}</h4></td>
                                                             </tr>
                                                             </tbody>
@@ -81,8 +78,8 @@
                                                 <hr/>
                                                 <br>
                                                 <div class="pull-right">
-                                                    <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar Datos</i></button>
-                                                    <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-confirmar"  title="Confirmar eliminación de datos." class="btn btn-danger">Eliminar Registro</i></button>
+                                                    <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-actualizar"  title="Visualizar la pantalla de actualización de datos. En ella podrá actualizar los datos pertinentes al registro."  class="btn btn-warning">  Actualizar datos</i></button>
+                                                    <button type="button"  data-hover="tooltip"  data-toggle="modal" data-target="#modal-confirmar"  title="Confirmar eliminación de datos." class="btn btn-danger">Eliminar registro</i></button>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,12 +1,13 @@
 $(document).ready(function () {
     constructorTabla();
-    constructorTabla2();
+  //  constructorTabla2();
     constructorSelect();
-    verificarVacio();
+//    verificarVacio();
     $("#"+listSidebar).addClass("active");
     $('#form-crear').parsley();
     $('#form-actualizar').parsley();
     $('#form-pass').parsley();
+    $('#cp2').colorpicker();
 });
 
 function cambiarVista(vista)
@@ -17,13 +18,13 @@ function cambiarVista(vista)
 		$('#tab-logos').addClass("hide");
 		$('#bot-mostrar').addClass("hide");
 		$('#busqueda').addClass("hide");
-     	$('#bot-buscar').html(" Mostrar Filtros");
+    $('#bot-buscar').html(" Mostrar Filtros");
 	}
 	else
 	{
      	$('#tab-logos').removeClass("hide");
      	$('#bot-mostrar').removeClass("hide");
-		$('#tab-lista').addClass("hide");
+	  	$('#tab-lista').addClass("hide");
 	}
 }
 

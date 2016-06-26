@@ -3,10 +3,9 @@
 use App\Material;
 use App\Talle;
 use App\Tipo;
-use Illuminate\Contracts\View\View;
 use App\Proveedor;
 use App\Color;
-
+use Illuminate\Contracts\View\View;
 
 class ArticuloComposer {
     /**
@@ -19,7 +18,7 @@ class ArticuloComposer {
     {
         $proveedores = Proveedor::orderBy('nombre','ASC')->lists('nombre','id');
         $materiales = Material::orderBy('nombre','ASC')->lists('nombre','id');
-        $talles = Talle::orderBy('nombre','ASC')->lists('nombre','id');
+        $talles = Talle::orderBy('talle','ASC')->lists('talle','id');
         $tipos = Tipo::orderBy('nombre','ASC')->lists('nombre','id');
         $colores = Color::orderBy('nombre','ASC')->lists('nombre','id');
         $view->with('proveedores',json_decode($proveedores, true))

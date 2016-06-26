@@ -15,7 +15,6 @@ class AddArticulosTable extends Migration
         Schema::create('articulos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('color');
             $table->string('alto');
             $table->string('ancho');
             $table->string('estado');
@@ -32,7 +31,8 @@ class AddArticulosTable extends Migration
             $table->integer('tipo_id')->unsigned();
             $table->foreign('tipo_id')->references('id')->on('tipos')->onDelete('cascade');
 
-stockMin
+            $table->integer('color_id')->unsigned();
+            $table->foreign('color_id')->references('id')->on('colores')->onDelete('cascade');
 
             $table->integer('stockMinimo');
             $table->integer('stock');

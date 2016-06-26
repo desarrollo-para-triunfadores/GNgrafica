@@ -35,8 +35,8 @@
 <script src="{{ asset('plantillas/KAdmin-Dark/script/highcharts-more.js') }}"></script>
 <script src="{{ asset('plantillas/KAdmin-Dark/script/charts-highchart-pie.js') }}"></script>
 <script src="{{ asset('plantillas/KAdmin-Dark/script/charts-highchart-more.js') }}"></script>
-
-
+<script src="{{ asset('plantillas/KAdmin-Dark/script/animation.js') }}"></script>
+<script src="{{ asset('plantillas/bootstrap-colorpicker-master/dist/js/bootstrap-colorpicker.js') }}"></script>
 
 <script src="{{ asset('js/plugins.js') }}"></script>
 <script src="{{ asset('js/busqueda.js') }}"></script>

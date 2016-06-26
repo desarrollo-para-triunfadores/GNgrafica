@@ -8,26 +8,26 @@ class Cliente extends Model
 {
     protected $table =  "clientes";
 
-    protected $fillable = ['nombre', 'apellido', 'empresa', 'responIva_id', 'cuit', 'dni', 'descripcion', 'telefono', 'email', 'localidad_id', 'direccion'];
+    protected $fillable = ['nombre', 'apellido', 'empresa', 'responiva_id', 'cuit', 'dni', 'descripcion', 'telefono', 'email', 'localidad_id', 'direccion'];
 
     public function ventas()
     {
         return $this->hasMany('App\Venta');
     }
 
-    public function localidad() 
+    public function localidad()
     {
     	return $this->belongsTo('App\Localidad');
     }
 
-    public function responIva()
+    public function responiva()
     {
-        return $this->belongsTo('App\ResponIva');
+        return $this->belongsTo('App\Responiva');
     }
 
  /*********************************************************************************************************/
 
-    public function scopeSearchResponIva($query, $idresponIva)
+    public function scopeSearchResponiva($query, $idresponIva)
     {
         if ($idresponIva == "-1")
         {

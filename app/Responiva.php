@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ResponIva extends Model
+class Responiva extends Model
 {
     protected $table = "responiva";
 

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\ResponIva;
+use App\Responiva;
 use Illuminate\Http\Request;
-
 use Carbon\Carbon;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
@@ -21,9 +19,9 @@ class ResponivaController extends Controller
 
     public function index()
     {
-        $responiva = ResponIva::all();
+        $responiva = Responiva::all();
         if ($responiva->count()==0){
-            return view('admin.parametros.responiva.sinregistros');
+            return view('admin.parametros.responiva.sinRegistros');
         }
         return view('admin.parametros.responiva.tabla')->with('responiva',$responiva);
     }
@@ -37,7 +35,7 @@ class ResponivaController extends Controller
 
     public function store(Request $request)
     {
-        $responiva = new ResponIva($request->all());
+        $responiva = new Responiva($request->all());
         $responiva->save();
         Flash::success('Se ha registrado la responsabilidad tributaria.');
         return redirect()->route('admin.responiva.index');
@@ -48,7 +46,7 @@ class ResponivaController extends Controller
 
     public function show($id)
     {
-        $responiva = ResponIva::find($id);
+        $responiva = Responiva::find($id);
         return view ('admin.parametros.responiva.show')->with('responiva',$responiva);
     }
 
@@ -56,7 +54,7 @@ class ResponivaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $responiva = ResponIva::find($id);
+        $responiva = Responiva::find($id);
         $responiva->fill($request->all());
         $responiva->save();
         Flash::success("Se han actualizado los datos hacerca de la responsabilidad ante IVA: ".$responiva->nombre.".");
@@ -66,9 +64,9 @@ class ResponivaController extends Controller
 
     public function destroy($id)
     {
-        $responiva= ResponIva::find($id);
+        $responiva= Responiva::find($id);
         $responiva->delete();
         Flash::error("Se ha suprmido ".$responiva->nombre ." como tipo de responsabilidad ante IVA");
-        return redirect('admin.parametros.responiva.tabla');
+          return redirect()->route('admin.responiva.index');
     }
 }
